@@ -1,24 +1,3 @@
-var createContainer = document.getElementById("createContainer");
-if (createContainer) {
-  createContainer.addEventListener("click", function (e) {
-    // Please sync "Creation" to the project
-  });
-}
-
-var createContainer1 = document.getElementById("createContainer1");
-if (createContainer1) {
-  createContainer1.addEventListener("click", function (e) {
-    // Please sync "Market Games" to the project
-  });
-}
-
-var createContainer2 = document.getElementById("createContainer2");
-if (createContainer2) {
-  createContainer2.addEventListener("click", function (e) {
-    // Please sync "Shop Game " to the project
-  });
-}
-
 var iconCart = document.getElementById("iconCart");
 if (iconCart) {
   iconCart.addEventListener("click", function (e) {
