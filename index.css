@@ -175,3 +175,18 @@ ul{
   border-radius: 50%;
   color: #ffffff;
 }
+
+.trademark{
+  display: inline-block;
+  background-color: #272A4E;
+  margin-top: 50px;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.trademark h4{
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  opacity: .60;
+}
