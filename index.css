@@ -87,6 +87,8 @@ ul li a{
   display: flex;
   align-items: center;
   padding-left: 57px;
+
+  display: none;
 }
 
 #sub-nav #nav-sub-nav ul li a{
@@ -103,4 +105,9 @@ ul li a{
 #sub-nav a img{
   padding-left: 7px;
   width: 15px;
+}
+
+/* main CSS */
+main{
+  background: black;
 }
