@@ -83,9 +83,8 @@ ul li a{
 
 #sub-nav{
   height: 25px;
-  background: #14162b;
-  display: flex;
-  align-items: center;
+  background: #0e0e0e;
+  padding-top: 1px;
   padding-left: 57px;
 
   display: none;
@@ -110,6 +109,6 @@ ul li a{
 /* main CSS */
 main{
   height: 100vh;
-  background: #272A4E;
+  background: #14162d;
 
 }
