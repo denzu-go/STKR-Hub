@@ -9,7 +9,7 @@ body{
 }
 
 header{
-  height: 70px;
+  height: 57px;
   background: #272A4E;
 
   display: flex;
@@ -23,10 +23,6 @@ ul{
   list-style-type: none;
 }
 
-.logo{
-  font-family: 'Akira Expanded', sans-serif;
-}
-
 ul li a{
   padding: 0 20px;
   text-decoration: none;
@@ -35,7 +31,7 @@ ul li a{
   font-weight: 510;
   opacity: .60;
   letter-spacing: .3px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .action-bar{
@@ -45,6 +41,25 @@ ul li a{
 }
 
 .logo{
-  font-size:10px;
+  position: relative;
+  font-size:8px;
+  color: #fff;
+  font-family: 'Akira Expanded', sans-serif;
+
+}
+
+.logo img{
+  width: 17px;
+  padding-bottom: 4px;
+}
+
+.logo h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a{
+  text-decoration: none;
   color: #fff;
 }
