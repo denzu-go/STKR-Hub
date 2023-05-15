@@ -1,0 +1,1 @@
+document.querySelector('#sub-nav').style.display = ('block');
