@@ -129,6 +129,9 @@ ul li a:hover {
 /* main CSS */
 main{
   height: 100vh;
-  background: #14162d;
+  background: rgb(22,24,48);
+  background: rgb(22,24,48);
+  background: linear-gradient
+    (180deg, rgba(22,24,48,1) 0%, rgba(24,26,52,1) 0%, rgba(29,32,63,1) 100%);
 
 }
