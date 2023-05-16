@@ -103,7 +103,7 @@ ul li a:hover {
 }
   
 
-/* sub nav ------------------------------------------------------------------------*/
+/* sub nav ----------------------------------------------------*/
 #sub-nav{
     height: 30px;
     background: rgb(24,26,49);
@@ -136,7 +136,9 @@ nav{
     padding-left: 7px;
     width: 15px;
 }
+/* end of sub nav ----------------------------------------------------*/
   
+
 /* footer ------------------------------------------------------*/
 .footer-container{
     max-width: 1500px;
@@ -229,6 +231,7 @@ ul{
     font-size: 15px;
     opacity: .60;
 }
+/* end of footer ------------------------------------------------------*/
 
 
 /* main CSS -----------------------------------------------------------------------------*/
@@ -246,8 +249,7 @@ main{
 
     height: auto;
     width: 1200px;
-  
-    background-color: #ffffff;
+
     margin: 40px auto;
 }
 
@@ -258,19 +260,24 @@ main{
   
     height: 450px;
     width: 1200px;
-  
-    background-color: #696969;
+
+}
+
+.box1{
+    width: 377px;
+    height: 100%;
+
+    background-color: #b098d7;
 }
 
 .box2{
     width: 270px;
     height: 100%;
 
-    background-color: #b098d7;
 }
 
-.box1, .box3{
-    width: 400px;
+.box3{
+    width: 377px;
     height: 100%;
 
     background-color: #b098d7;
@@ -316,6 +323,8 @@ main{
 
     background-color: aqua;
 }
+/* end of main CSS --------------------------*/
+
 
 /* table -----------------------------*/
 table.GeneratedTable {
@@ -325,9 +334,10 @@ table.GeneratedTable {
     border-color: #ffffff;
     border-style: solid;
     color: #ffffff;
+    opacity: .60;
 
-    font-family: 'SF Pro Display', sans-serif;
-    font-size: 14px;
+    font-family: 'SF Compact Display', sans-serif;
+    font-size: 12px;
 }
   
 table.GeneratedTable td, table.GeneratedTable th {
@@ -339,3 +349,106 @@ table.GeneratedTable td, table.GeneratedTable th {
     text-align: center;
 }
 
+.quality{
+    width: 135px;
+}
+
+.price{
+    width: 135px;
+}
+/* end of table -----------------------------*/
+
+
+/* box3 -------------------------------------*/
+.box3{
+    position: relative;
+}
+
+.line-a, .line-b{
+    width: 377px;
+    height: 44px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+
+    background-color: #dd1111;
+}
+
+.quantity{
+    width: 377px;
+    height: 50px;
+
+    margin-bottom: 11px;
+
+    background-color: #dd1111;
+}
+
+.add-to-cart{
+    width: 377px;
+    height: 50px;
+
+    background-color: #dd1111;
+}
+
+.selections{
+    position: absolute;
+    bottom: 0;
+}
+/* end of box3 -------------------------------------*/
+
+/* add to cart ----------------------------*/
+button {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 17px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+    background-size: 300%;
+    border-radius: 7px;
+    z-index: 1;
+}
+  
+button:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+}
+  
+@keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 400%;
+    }
+}
+  
+button:before {
+    content: '';
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+    background-size: 400%;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+button:hover::before {
+    filter: blur(20px);
+}
+  
+button:active {
+    background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+}
+
+/* end of add to cart ----------------------------*/
