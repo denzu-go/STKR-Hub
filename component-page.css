@@ -373,12 +373,18 @@ table.GeneratedTable td, table.GeneratedTable th {
 }
 
 .quantity{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'SF Pro Display', sans-serif;
+
     width: 377px;
     height: 50px;
 
     margin-bottom: 11px;
 
-    background-color: #dd1111;
+    background-color: #6d2626;
+    
 }
 
 .add-to-cart{
@@ -395,7 +401,7 @@ table.GeneratedTable td, table.GeneratedTable th {
 /* end of box3 -------------------------------------*/
 
 /* add to cart ----------------------------*/
-button {
+.add-to-cart{
     text-decoration: none;
     position: relative;
     border: none;
@@ -404,8 +410,7 @@ button {
     font-weight: 500;
 
     color: #fff;
-    width: 9em;
-    height: 3em;
+    width: 100%;
     line-height: 2em;
     text-align: center;
     background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
@@ -414,7 +419,7 @@ button {
     z-index: 1;
 }
   
-button:hover {
+.add-to-cart:hover {
     animation: ani 8s linear infinite;
     border: none;
 }
@@ -429,7 +434,7 @@ button:hover {
     }
 }
   
-button:before {
+.add-to-cart:before {
     content: '';
     top: -2px;
     left: -2px;
@@ -443,12 +448,65 @@ button:before {
     transition: 1s;
 }
 
-button:hover::before {
+.add-to-cart:hover::before {
     filter: blur(20px);
 }
   
-button:active {
+.add-to-cart:active {
     background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
 }
 
 /* end of add to cart ----------------------------*/
+
+
+/* input-stepper -----------------------------------*/
+
+.quantity-text{
+    color: #fff;
+    font-size: 17px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    margin-right: 15px;
+}
+
+
+.btn-default{
+    color: #979797;
+    font-size: 14px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    width: 25px;
+    height: 25px;
+    border: none;
+
+}
+
+.text-center{
+    color: #282828;
+    font-size: 17px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    width: 70px;
+    text-align: center;
+
+    border: none;
+
+    height: 50px;
+}
+
+.quantity-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.q2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
