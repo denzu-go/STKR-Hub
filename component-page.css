@@ -267,20 +267,20 @@ main{
     width: 377px;
     height: 100%;
 
-    background-color: #b098d7;
 }
 
 .box2{
     width: 270px;
     height: 100%;
+}
 
+.box2 a{
+    color: white;
 }
 
 .box3{
     width: 377px;
     height: 100%;
-
-    background-color: #b098d7;
 }
 
 .box1{
@@ -309,8 +309,6 @@ main{
 
     width: 377px;
     height: 68px;
-    
-    background-color: #dd1111;
 }
 
 .pic1, .pic2, .pic3{
@@ -337,7 +335,7 @@ table.GeneratedTable {
     opacity: .60;
 
     font-family: 'SF Compact Display', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
   
 table.GeneratedTable td, table.GeneratedTable th {
@@ -367,9 +365,11 @@ table.GeneratedTable td, table.GeneratedTable th {
 .line-a, .line-b{
     width: 377px;
     height: 44px;
-    border-bottom: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid #24263d;
 
-    background-color: #dd1111;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .quantity{
@@ -383,15 +383,13 @@ table.GeneratedTable td, table.GeneratedTable th {
 
     margin-bottom: 11px;
 
-    background-color: #6d2626;
-    
 }
 
 .add-to-cart{
     width: 377px;
     height: 50px;
 
-    background-color: #dd1111;
+
 }
 
 .selections{
@@ -479,9 +477,9 @@ table.GeneratedTable td, table.GeneratedTable th {
 
     width: 25px;
     height: 25px;
-    border: none;
-
+    border: 2px solid #272a4e;
 }
+
 
 .text-center{
     color: #282828;
@@ -489,10 +487,11 @@ table.GeneratedTable td, table.GeneratedTable th {
     font-family: 'SF Pro Display', sans-serif;
     font-weight: 500;
 
-    width: 70px;
+    width: 100px;
     text-align: center;
 
-    border: none;
+    border: 2px solid #272a4e;
+    border-radius: 7px 0px 0px 7px;
 
     height: 50px;
 }
@@ -500,7 +499,6 @@ table.GeneratedTable td, table.GeneratedTable th {
 .quantity-container{
     display: flex;
     justify-content: center;
-
 }
 
 .q2{
@@ -510,3 +508,24 @@ table.GeneratedTable td, table.GeneratedTable th {
     justify-content: center;
 }
 
+/* end of input-stepper -----------------------------------*/
+
+.line-a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    color: #fff;
+}
+
+.line-a p{
+    opacity: .60;
+}
+
+.line-b{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    color: #fff;
+}
