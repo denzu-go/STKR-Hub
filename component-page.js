@@ -17,3 +17,18 @@ $(document).on('click', '.number-spinner button', function () {
 	}
 	btn.closest('.number-spinner').find('input').val(newVal);
 });
+
+function detect(){
+	// get the value of the input field
+	const value = document.getElementById('quantity-input').value;
+	// update the value of the input field
+
+	if (value > 99){
+		const updated = document.getElementById('quantity-input').value = 1;
+	} else {
+		console.log("Error: Cannot update quantity");
+	}
+	
+	// write result
+	document.getElementById('result') = updated;	
+}

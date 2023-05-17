@@ -149,18 +149,9 @@
 
                             <div class="quantity-container">
                               <div class="q1">
-                                <input type="text" class="form-control text-center" value="1">
+                                <input id="quantity-input" type="number" class="form-control text-center" value="1" min="1" max="99" onchange="detect()" >
                               </div>
-
-                              <div class="q2">
-                                <span class="input-group-btn1">
-                                  <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus">+</span></button>
-                                </span>
-
-                                <span class="input-group-btn2">
-                                  <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus">-</span></button>
-                                </span>
-                              </div>
+                              <span id="result"></span>                        
                             </div>
                           </div>
                         </div>
