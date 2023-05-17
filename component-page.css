@@ -447,11 +447,12 @@ table.GeneratedTable td, table.GeneratedTable th {
 }
 
 .add-to-cart:hover::before {
-    filter: blur(20px);
+    filter: blur(10px);
 }
   
 .add-to-cart:active {
-    background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+    background: linear-gradient(32deg,#ffffff,#ffffff,#ffffff, #ffffff);
+    /* background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8); */
 }
 
 /* end of add to cart ----------------------------*/
