@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="main" src="./img/box1.jpg" alt="" width="50%">
+    </div>
+
+    <div onclick="palit()">
+        <img id="pic" src="./img/image-profile.png" alt="" width="50%">
+    </div>
+
+    <script>
+        function palit(){
+            // get of main
+            const main = document.querySelector('#main');
+
+            //get of pic
+            const pic = document.querySelector('#pic');
+
+            //change main src to pic src
+            main.src = pic.src;
+        }
+    </script>
+</body>
+</html>

@@ -33,11 +33,11 @@ function detect(){
 	document.getElementById('result') = updated;	
 }
 
-
-// pics pag pinindot papalit sya sa big pic
 function changePicture(){
-	// get current picture
-	const currentPicture = document.querySelector('#pic').src;
-	//exchange to big picture
-	document.querySelector('#big-pic').src = currentPicture;
-}   
+	document.querySelectorAll('.smallPic').forEach(function(smallPic) {
+		smallPic.addEventListener('click', function(event) {
+		  const mainPic = document.querySelector('.mainPic');
+		  mainPic.src = event.target.src;
+		});
+	  });	  
+}
