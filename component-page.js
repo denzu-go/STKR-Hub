@@ -32,3 +32,12 @@ function detect(){
 	// write result
 	document.getElementById('result') = updated;	
 }
+
+
+// pics pag pinindot papalit sya sa big pic
+function changePicture(){
+	// get current picture
+	const currentPicture = document.querySelector('#pic').src;
+	//exchange to big picture
+	document.querySelector('#big-pic').src = currentPicture;
+}   

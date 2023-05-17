@@ -245,6 +245,7 @@ main{
 
 .container-main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     height: auto;
@@ -258,9 +259,8 @@ main{
     justify-content: space-around;
     align-items: center;
   
-    height: 450px;
+    height: 473px;
     width: 1200px;
-
 }
 
 .box1{
@@ -293,11 +293,16 @@ main{
 }
 
 .big-pic{
+
     width: 377px;
-    height: 365px;
+    height: 388px;
+}
+
+.big-pic img{
+
+    width: 377px;
+    height: 388px;
     border-radius: 7px;
-    
-    background-color: #ffffff;
 }
 
 .pics{
@@ -311,15 +316,13 @@ main{
     height: 68px;
 }
 
-.pic1, .pic2, .pic3{
+.pic1 img, .pic2 img, .pic3 img{
     margin-left: 10px;
     margin-right: 10px;
 
     width: 68px;
     height: 68px;
     border-radius: 7px;
-
-    background-color: aqua;
 }
 /* end of main CSS --------------------------*/
 
@@ -358,6 +361,14 @@ table.GeneratedTable td, table.GeneratedTable th {
 
 
 /* box3 -------------------------------------*/
+.component-name{
+    color: #fff;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    padding-bottom: 10px;
+}
+
 .box3{
     position: relative;
 }
@@ -503,7 +514,6 @@ table.GeneratedTable td, table.GeneratedTable th {
 }
 
 /* end of input-stepper -----------------------------------*/
-
 .line-a{
     display: flex;
     align-items: center;
