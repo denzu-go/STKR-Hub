@@ -268,7 +268,7 @@ input {
 }
 
 .overlay {
-  background-image: url('signup.jpg');
+  background-image: url('./img/signup.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
