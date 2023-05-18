@@ -7,7 +7,6 @@
 }
   
 body{
-    height: auto;
     width: 100%;
 }
   
@@ -58,8 +57,9 @@ ul li a:hover {
     display: flex;
 }
   
-.action-bar a{
+.action-bar, .action-bar ul li{
     opacity: 1;
+    list-style: none;
 }
   
 .logo{
@@ -142,103 +142,8 @@ nav{
   
 
 /* footer ------------------------------------------------------*/
-/* .footer-container{
-    max-width: 1200px;
-    background-color: #272A4E;
-    margin: auto;
-    
-}
-  
-.row{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-  
-ul{
-    list-style: none;
-}
-
-.footer{
-    background-color: #272A4E;
-    padding: 70px 0;
-    font-family: 'SF Pro Display', sans-serif;
-    
-} 
-  
-.footer-col{
-    width: 25%;
-    padding: 0 70px;
-}
-  
-.footer-col h4{
-    font-size: 14px;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-}
-  
-.footer-col h4::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    background-color: #B361E8;
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px
-}
-  
-.footer-col ul li:not(:last-child){
-    margin-bottom: 20px;
-}
-  
-.footer-col ul li a{
-    font-size: 14px;
-    text-transform: capitalize;
-    color: #a9aab8;
-    text-decoration: none;
-    font-weight: 300;
-    transition: all 0.3s ease;
-}
-  
-.footer-col ul li a:hover{
-    color: #ffffff;
-    padding-left: 10px;
-}
-  
-.footer-col .social-links a{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: #383e84;
-    margin:0 10px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #ffffff;
-}
-  
-.trademark{
-    display: inline-block;
-    background-color: #272A4E;
-    margin-top: 50px;
-    width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.trademark h4{
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 14px;
-    opacity: .60;
-} */
-
 footer{
-    background-color: #24263d;
+    background-color: #272A4E;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -248,6 +153,9 @@ footer{
     font-family: 'SF Pro Display', sans-serif;
     font-weight: 100;
     color: #ffffff;
+
+    position: sticky;
+    top: 100%;
 }
 
 .footer-container{
@@ -350,6 +258,8 @@ footer ul li{
 main{
     display: flex;
     justify-content: center;
+
+    min-height: 100vh;
     
     background: rgb(15,16,32);
     background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
@@ -428,6 +338,12 @@ main{
     height: 68px;
 
     gap: 15px;
+
+    cursor: pointer;
+}
+
+.smallPic:active{
+    border: 2px solid #15172E;
 }
 
 .smallPic{
@@ -659,7 +575,7 @@ table.GeneratedTable td, table.GeneratedTable th {
     color: #c2c2c2;
     font-family: 'SF Compact Display', sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .spec-text{

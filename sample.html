@@ -7,25 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <img id="main" src="./img/box1.jpg" alt="" width="50%">
-    </div>
 
-    <div onclick="palit()">
-        <img id="pic" src="./img/image-profile.png" alt="" width="50%">
-    </div>
+    <my-header></my-header>
 
-    <script>
-        function palit(){
-            // get of main
-            const main = document.querySelector('#main');
-
-            //get of pic
-            const pic = document.querySelector('#pic');
-
-            //change main src to pic src
-            main.src = pic.src;
-        }
+    <script type="module">
+        
     </script>
 </body>
 </html>
