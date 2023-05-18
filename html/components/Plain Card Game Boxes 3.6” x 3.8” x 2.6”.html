@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title id="title">Home</title>
 
     <!-- css -->
     <link rel="stylesheet" href="../../css/component-page.css" />
 
+    <!-- icon -->
+    <link rel="shortcut icon" type="image" href="../../img/logo.png">
+
+    <!-- fonts -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -49,21 +53,7 @@
     <div class="container">
       <my-header></my-header>
 
-      <!-- naka hide tong part na toh, wag idelete -->
-      <div id="sub-nav">
-        <nav id="nav-sub-nav">
-          <ul>
-            <li>
-              <a href="#"
-                >Creation
-                <img src="../../img/right-arrow.png" alt="" class="sub-nav-icon"
-              /></a>
-            </li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Market Games</a></li>
-          </ul>
-        </nav>
-      </div>
+      <my-subnav></my-subnav>
 
       <main>
         <div class="container-main">
@@ -379,9 +369,9 @@
 
     <script src="../../js/main.js"></script>
     <script src="../../js/header.js"></script>
+    <script src="../../js/subnav.js"></script>
     <script src="../../js/footer.js"></script>
     <script>
-      // document.querySelector('#sub-nav').style.display = ('block');
 
       // for text-spinner
       $(document).on('click', '.number-spinner button', function () {
@@ -429,15 +419,9 @@
       // end of function to changePicture
 
 
-
-
-
-
-
-
       // ===========================================================================================================
       // TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:
-      // TODO: DITO MO EEDIT UNG MGA DETAILS (sa pagitan ng mga " " mo ilalagay)
+      // DITO MO EEDIT UNG MGA DETAILS (sa pagitan ng mga " " mo ilalagay)
 
       // component name: ============================
       document.getElementById("component-name").innerHTML = "Plain Card Game Boxes 3.6” x 3.8” x 2.6”";
@@ -554,6 +538,14 @@
                   <li>No minimum order required. Buy 1 for P200</li>
                 </ul>
       `;
+      //hanggang dito na lng ung eedit mo
+      //TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:TODO:
+      
+
+      // component name =  title page
+      const title = document.querySelector("#title");
+      const componentName = document.querySelector('#component-name');
+      title.innerHTML = componentName.innerHTML;
 
     </script>
   </body>
