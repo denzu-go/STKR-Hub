@@ -1,4 +1,4 @@
-document.querySelector('#sub-nav').style.display = ('block');
+// document.querySelector('#sub-nav').style.display = ('block');
 
 // for text-spinner
 $(document).on('click', '.number-spinner button', function () {    

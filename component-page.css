@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -20,12 +22,12 @@ header{
     color: #fff;
 }
   
-ul{
+nav ul{
     display: flex;
     list-style-type: none;
 }
   
-ul li a{
+nav ul li a{
     padding: 0 20px;
     text-decoration: none;
     color: #fff;
@@ -140,15 +142,17 @@ nav{
   
 
 /* footer ------------------------------------------------------*/
-.footer-container{
-    max-width: 1500px;
+/* .footer-container{
+    max-width: 1200px;
     background-color: #272A4E;
     margin: auto;
+    
 }
   
 .row{
     display: flex;
     flex-wrap: wrap;
+
 }
   
 ul{
@@ -159,6 +163,7 @@ ul{
     background-color: #272A4E;
     padding: 70px 0;
     font-family: 'SF Pro Display', sans-serif;
+    
 } 
   
 .footer-col{
@@ -167,7 +172,7 @@ ul{
 }
   
 .footer-col h4{
-    font-size: 18px;
+    font-size: 14px;
     color: #ffffff;
     text-transform: capitalize;
     margin-bottom: 35px;
@@ -191,9 +196,9 @@ ul{
 }
   
 .footer-col ul li a{
-    font-size: 20px;
+    font-size: 14px;
     text-transform: capitalize;
-    color: #b8acac;
+    color: #a9aab8;
     text-decoration: none;
     font-weight: 300;
     transition: all 0.3s ease;
@@ -228,9 +233,117 @@ ul{
 .trademark h4{
     color: #ffffff;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     opacity: .60;
+} */
+
+footer{
+    background-color: #24263d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 507px;
+
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 100;
+    color: #ffffff;
 }
+
+.footer-container{
+    position: relative;
+    width: 1053px;
+    height: 290px;
+}
+
+footer ul li{
+    list-style: none;
+    text-decoration: none;
+}
+
+/* /////////////////////////////////////// */
+.socials{
+    margin-bottom: 17px;
+}
+
+.socials ul, .socials i{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    color: #ccc;
+}
+
+.socials ul, .socials a{
+    text-decoration: none;
+}
+
+.main-footer{
+    display: flex;
+    margin-bottom: 17px;
+    gap: 168px;
+}
+
+
+/* ///////////////////////////////// */
+.f-left{
+    display: flex;
+
+    margin-bottom: 17px;
+    gap: 50px;
+    line-height: 1.4;
+}
+
+.f-left a{
+    text-decoration: none;
+    color: #e7e7e7;
+}
+
+.fset1{
+
+}
+
+.fset2{
+
+}
+
+.fset3{
+
+}
+
+.fset4{
+
+}
+
+.f-right{
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 184px;
+    height: 90px;
+    background-color: #28dbe5;
+}
+
+.flow{
+    color: #cccccc;
+    margin-bottom: 17px
+}
+
+/* /////////////////////////////////////////// */
+.fdown ul{
+    display: flex;
+    gap: 20px;
+}
+
+.fdown a{
+    color: #e7e7e7;
+    text-decoration: none;
+}
+
+
 /* end of footer ------------------------------------------------------*/
 
 
@@ -314,13 +427,11 @@ main{
 
     width: 377px;
     height: 68px;
+
+    gap: 15px;
 }
 
-.pic img
-{
-    margin-left: 10px;
-    margin-right: 10px;
-
+.smallPic{
     width: 68px;
     height: 68px;
     border-radius: 7px;
@@ -533,4 +644,90 @@ table.GeneratedTable td, table.GeneratedTable th {
     justify-content: flex-end;
 
     color: #fff;
+}
+
+
+
+/* mid specs and need help -------------------------------------------------*/
+.mid{
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    margin-top: 70px;
+
+    height: auto;
+
+    color: #c2c2c2;
+    font-family: 'SF Compact Display', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.spec-text{
+    width: 727px;
+    line-height: 2;
+
+    padding: 30px;
+    background-color: #272A4E;
+}
+
+
+.specs ul li{
+    list-style: disc ;
+    list-style-position: inside;
+}
+
+.help-text{
+    width: 300px;
+    line-height: 2;
+
+    padding: 30px;
+    background-color: #272A4E;
+}
+/* end of mid specs and need help -------------------------------------------------*/
+
+/* low --------------------------*/
+.low{
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    margin-top: 70px;
+
+    height: auto;
+
+    color: #c2c2c2;
+    font-family: 'SF Compact Display', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.low-text{
+    display: flex;
+    justify-content: center;
+
+    width: 727px;
+
+    padding: 20px;
+    background-color: #272A4E;
+}
+
+
+.low-text ul{
+    list-style: none;
+    list-style-position: inside;
+    display: flex;
+    gap: 30px;
+}
+
+.null{
+    width: 300px;
+}
+
+i{
+    font-size: 25px;
+    color: #c2c2c2;
+}
+
+.follow{
+    padding-bottom: 20px;
 }
