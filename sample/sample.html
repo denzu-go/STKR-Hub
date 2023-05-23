@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Page Switching Example</title>
-    <style>
-        .section {
-            display: none; /* Initially hide all sections */
-        }
-        .active {
-            display: block; /* Show the active section */
-        }
-    </style>
-    <script>
-        function switchSection(sectionId) {
-            var sections = document.getElementsByClassName("section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("active"); // Hide all sections
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Make Phase</title>
 
-            var section = document.getElementById(sectionId);
-            if (section) {
-                section.classList.add("active"); // Show the selected section
-                history.replaceState(null, null, '#' + sectionId); // Update the URL fragment
-            }
-        }
+    <!-- css -->
+    <link rel="stylesheet" href="../css/make phase.css" />
 
-        window.onload = function() {
-            var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-            if (sectionId) {
-                switchSection(sectionId); // Activate the section based on the URL fragment
-            } else {
-                switchSection('home'); // Default to the home section if no fragment is present
-            }
-        }
-    </script>
-</head>
+    <!-- icons -->
+    <link rel="shortcut icon" type="image" href="../../img/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/svg-with-js.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.cdnfonts.com/css/akira-expanded"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-compact-display"
+      rel="stylesheet"
+    />
+
+    <!-- for text-spinner -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
 <body>
     <nav>
         <a href="#home" onclick="switchSection('home')">Home</a>
