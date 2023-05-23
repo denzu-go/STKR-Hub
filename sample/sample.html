@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Switching Example</title>
+    <style>
+        .section {
+            display: none; /* Initially hide all sections */
+        }
+        .active {
+            display: block; /* Show the active section */
+        }
+    </style>
+    <script>
+        function switchSection(sectionId) {
+            var sections = document.getElementsByClassName("section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active"); // Hide all sections
+            }
 
-    <link rel="stylesheet" href="sample1.css">
-    <title>Document</title>
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add("active"); // Show the selected section
+                history.replaceState(null, null, '#' + sectionId); // Update the URL fragment
+            }
+        }
+
+        window.onload = function() {
+            var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
+            if (sectionId) {
+                switchSection(sectionId); // Activate the section based on the URL fragment
+            } else {
+                switchSection('home'); // Default to the home section if no fragment is present
+            }
+        }
+    </script>
 </head>
 <body>
+    <nav>
+        <a href="#home" onclick="switchSection('home')">Home</a>
+        <a href="#contacts" onclick="switchSection('contacts')">Contacts</a>
+    </nav>
 
-    <h1 class="eto" id="_eto">asdhjajkwdawd</h1>
+    <section id="home" class="section active">
+        <h1>Home</h1>
+        <p>This is the Home section.</p>
+    </section>
 
-    <my-header></my-header>
-
-    <script type="module">
-        document.getElementById("_eto").innerHTML = "727jj7";
-    </script>
+    <section id="contacts" class="section">
+        <h1>Contacts</h1>
+        <p>This is the Contacts section.</p>
+    </section>
 </body>
 </html>

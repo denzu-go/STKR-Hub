@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">Checkout</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/checkout.css" />
+
+    <!-- icon -->
+    <link rel="shortcut icon" type="image" href="../../img/logo.png">
+
+    <!-- fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/akira-expanded"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-compact-display"
+      rel="stylesheet"
+    />
+
+    <!-- for text-spinner -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <my-header-for-components></my-header-for-components>
+
+      <main>
+        <div class="container-main">
+            <div class="title-of-section">
+                <div class="title">
+                    <p>Checkout</p>
+                </div>
+                <div class="description">
+                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint sunt tempora earum quaerat officiis fuga assumasdasdenda ipsa suscipit libero unde!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint sunt tempora earum quaerat officiis fuga assumasdasdenda ipsa suscipit libero unde!</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="address">
+                    <h5>Shipping Address</h5>
+                    <div class="address-bar">
+                        <div class="dropdown" onclick="toggleDropdown(event)">
+                            <button class="parent-btn" id="dropdown-btn">Option 1</button>
+                            <div class="dropdown-content" id="dropdown-content">
+                                <!-- eto ung nagmumultiply pag nadadagdagan ng address -->
+                                <div class="drop-item" onclick="selectOption(event, 'Option 1')">
+                                    <div class="address-info">
+                                        <span id="name">Denzel Go</span>
+    
+                                        <span id="homeaddress">8 Doneza St. Balubaran Malinta Valenzuela City</span>
+    
+                                        <span id="mobile">09770257461</span>
+                                    </div>
+                                </div>
+                                <!-- END of eto ung nagmumultiply pag nadadagdagan ng address -->
+    
+                                <!-- eto ung nagmumultiply pag nadadagdagan ng address -->
+                                <div class="drop-item" onclick="selectOption(event, 'Option 2')">
+                                    <div class="address-info">
+                                        <span id="name">Denzel Go</span>
+    
+                                        <span id="homeaddress">8 Doneza St. Balubaran Malinta Valenzuela City</span>
+    
+                                        <span id="mobile">09770257461</span>
+                                    </div>
+                                </div>
+                                <!-- END of eto ung nagmumultiply pag nadadagdagan ng address -->
+    
+    
+                                <!-- eto ung nagmumultiply pag nadadagdagan ng address -->
+                                <div class="drop-item" onclick="selectOption(event, 'Option 3')">
+                                    <div class="address-info">
+                                        <span id="name">Denzel Go</span>
+    
+                                        <span id="homeaddress">8 Doneza St. Balubaran Malinta Valenzuela City</span>
+    
+                                        <span id="mobile">09770257461</span>
+                                    </div>
+                                </div>
+                                <!-- eto ung nagmumultiply pag nadadagdagan ng address -->
+                            </div>
+                        </div>
+    
+                        <button class="add-new-address" onclick="openModal()">
+                            Add new address
+                        </button>
+
+                        <div class="modal-overlay" id="modal-overlay"></div>
+                        <div class="modal-content" id="modal-content">
+
+                          <form action="" method="post">
+                            <h2>Add New Address</h2>
+                            <br>
+
+                            <h5>Full Name</h5>
+                            <input class="input-text" type="text" name="" placeholder="Enter your Full Name"/>
+                            <br><br>
+
+                            <h5>Mobile Number</h5>
+                            <input class="input-text" type="text" name="" placeholder="Enter your mobile"/>
+                            <br><br>
+
+                            <h5>Full Address</h5>
+                            <input class="input-text" type="text" name="" placeholder="Enter your full address"/>
+                            <br><br>
+
+                            <h5>City/Province</h5>
+                            <input class="input-text" type="text" name="" placeholder="Enter your City/Province"/>
+                            <br><br>
+
+                            <h5>Postal Code</h5>
+                            <input class="input-text" type="text" name="" placeholder="Enter your Postal Code"/>
+                            <br><br>
+
+                          </form>
+
+                          <div class="buttons">
+                            <button onclick="closeModal()" class="close">Close</button>
+                            <button type="submit" class="submit">Update Changes</button>
+                          </div>
+                                                                            
+                        </div>
+                    </div>      
+
+                </div>
+
+                <div class="note">
+                    <h5>Order Notes:</h5>
+                    <div class="notepad">
+
+                    </div>
+                    <div class="description">
+                        <p>
+                            Optional. Use this field if you wish to relay any special packaging instructions to us. Please note that this field cannot be used to include a physical note in the order. We have no way to pass on specific delivery instructions (beyond what is included in the address). If you have an issue with a previous order or questions regarding this order, please go to Support Center instead of using this field.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </main>
+
+
+      <my-footer-for-components></my-footer-for-components>
+
+    </div>
+
+    <script src="./js/main.js"></script>  
+    <script src="./js/login.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/header-for-components.js"></script>
+    <script src="../../js/subnav.js"></script>
+    <script src="../../js/footer-for-components.js"></script> 
+    
+
+    <!-- dropdown -->
+        <script>
+        var dropdownContent = document.getElementById('dropdown-content');
+
+        function toggleDropdown(event) {
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        event.stopPropagation();
+        }
+
+        function selectOption(event, option) {
+        var dropdownBtn = document.getElementById('dropdown-btn');
+        dropdownBtn.innerText = option;
+        dropdownContent.style.display = 'none';
+        event.stopPropagation();
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function() {
+        dropdownContent.style.display = 'none';
+        });
+      </script>
+
+
+      <!-- popup Modal -->
+      <script>
+        function openModal() {
+              var modalOverlay = document.getElementById('modal-overlay');
+              var modalContent = document.getElementById('modal-content');
+
+              modalOverlay.style.display = 'block';
+              modalContent.style.display = 'block';
+            }
+
+            function closeModal() {
+              var modalOverlay = document.getElementById('modal-overlay');
+              var modalContent = document.getElementById('modal-content');
+
+              modalOverlay.style.display = 'none';
+              modalContent.style.display = 'none';
+            }        
+      </script>
+  </body>
+</html>

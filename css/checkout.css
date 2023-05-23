@@ -1,0 +1,258 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/subnav.css);
+@import url(../css/make-table.css);
+@import url(../css/add\ new\ address.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body{
+    width: 100%;
+} 
+
+/* main CSS -----------------------------------------------------------------------------*/
+main{
+    display: flex;
+    justify-content: center;
+
+    min-height: 100vh;
+    
+    background: rgb(15,16,32);
+    background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
+}
+
+a{
+    text-decoration: none;
+}
+
+.container-main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* main CSS -----------------------------------------------------------------------------*/
+
+
+
+/* title */
+.title-of-section{
+    display: flex;
+    align-items: center;
+
+    width: 1120px;
+
+    font-family: 'SF Compact Display', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+
+    color: #CDABFF;
+    border-bottom: 1px solid #c8c8c8;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    margin-bottom: 20px;    
+    margin-top: 20px;
+}
+
+.title{
+    width: 300px;
+}
+
+.description{
+    font-family: 'Lato';
+    font-size: 10px;
+    font-weight: 100;
+    color: #c8c8c8;
+}
+
+#description{
+    font-size: 10px;
+}
+
+
+
+
+/* content */
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 1120px;
+    height: auto;
+    background-color: aquamarine;
+}
+
+    .address{
+        width: auto;
+        height: 80px;
+        background-color: blue;
+
+    }
+
+        /* dropdown */
+        .parent-btn{
+            height: 40px;
+            width: 950px;
+            background-color: #ffffff;
+            border: none;
+
+            cursor: pointer;
+            text-align: left;
+
+            font-family: 'Lato';
+            font-size: 14px;
+
+            padding: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            
+          }
+      
+          .dropdown-content {
+            position: absolute;
+            min-width: 160px;
+            z-index: 1; 
+            display: none;
+          }
+      
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;        
+          }
+
+          .drop-item{
+            height: 40px;
+            width: 950px;
+            background-color: #c8c8c8;
+            border: none;
+
+            cursor: pointer;
+            text-align: left;
+
+            font-family: 'Lato';
+            font-size: 14px;
+
+            padding: 10px;
+            
+            border-bottom: #282828 solid 0.5px;
+          }
+  
+    .address-bar{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .add-new-address{
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 40px;
+        width: 160px;
+        background-color: #CDABFF;
+    }
+    
+
+
+    .note{
+        width: auto;
+        height: 356px;
+        background-color: rgb(104, 104, 166);
+    }
+        .notepad{
+            height: 250px;
+            width: auto;
+            background-color: #CDABFF;
+        }
+
+        .description{
+            
+        }
+
+
+
+/* add new address popup */
+.add-new-address-popup{
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+}
+
+
+/* Modal Styling */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+
+  .modal-content {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 700px;
+    height: auto;
+
+    background-color: #272A4E;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+  }
+
+  /* Button Styling */
+  .popup-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* change name of project name */
+.input-text {
+    width: 100%;
+    height: 30px;
+
+    font: 'Lato';
+    font-size: 14px;
+
+    padding: 10px;
+    border-width: 1px;
+    border-color: #858585;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 7px;
+
+}
+.input-text:focus {
+    outline:none;
+}
+/* END of change of project name */
+
