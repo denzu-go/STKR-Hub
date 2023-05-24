@@ -78,7 +78,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <title>Sample 2</title>
+    <title>Make Phase - All Components</title>
 
     <style>
       @import url(../css/header.css);
@@ -793,70 +793,7 @@
       <script src="../js/section visibility.js"></script>
 
       <script>
-        // function switchSection(sectionId) {
 
-        //     var sections = document.getElementsByClassName("section");
-        //     for (var i = 0; i < sections.length; i++) {
-        //         sections[i].classList.remove("section-active"); // Hide all sections
-        //     }
-
-        //     var section = document.getElementById(sectionId);
-        //     if (section) {
-        //         section.classList.add("section-active"); // Show the selected section
-        //         history.replaceState(null, null, '#' + sectionId); // Update the URL fragment
-        //     }
-        // }
-
-        // window.onload = function() {
-        //     var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-        //     if (sectionId) {
-        //         switchSection(sectionId); // Activate the section based on the URL fragment
-        //     } else {
-        //         switchSection('allcomponents'); // Default to the home section if no fragment is present
-        //     }
-        // }
-
-        function switchSection(sectionId, event) {
-          event.preventDefault(); // Prevent default scroll behavior
-
-          var sections = document.getElementsByClassName("section");
-          for (var i = 0; i < sections.length; i++) {
-            sections[i].classList.remove("section-active"); // Hide all sections
-          }
-
-          var section = document.getElementById(sectionId);
-          if (section) {
-            section.classList.add("section-active"); // Show the selected section
-            history.replaceState(null, null, "#" + sectionId); // Update the URL fragment
-            localStorage.setItem("activeSection", sectionId); // Store the active section ID in localStorage
-          }
-        }
-
-        window.onload = function () {
-          var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-          if (sectionId) {
-            switchSection(sectionId, { preventDefault: function () {} }); // Activate the section based on the URL fragment
-          } else {
-            sectionId = localStorage.getItem("activeSection"); // Retrieve the active section ID from localStorage
-            if (sectionId) {
-              switchSection(sectionId, { preventDefault: function () {} }); // Activate the section from localStorage
-            } else {
-              switchSection("allcomponents", {
-                preventDefault: function () {},
-              }); // Default to the home section if no fragment or localStorage value is present
-            }
-          }
-        };
-
-        document.addEventListener("DOMContentLoaded", function () {
-          var navLinks = document.querySelectorAll("nav a");
-          navLinks.forEach(function (link) {
-            link.addEventListener("click", function (event) {
-              var sectionId = this.getAttribute("href").slice(1); // Get the section ID from the link href
-              switchSection(sectionId, event); // Activate the section and prevent scrolling
-            });
-          });
-        });
       </script>
     </div>
   </body>
