@@ -187,3 +187,50 @@ p.description {
   display: flex;
   gap: 50px;
 }
+
+/* form */
+form{
+  font-family: 'SF Compact Displays', sans-serif;
+  color: #fff;
+}
+
+/* input */
+input{
+  width: 680px;
+  height: 30px;
+  border-radius: 7px;
+
+  font-family: 'Lato';
+  font-size: 14px;
+}
+
+.textarea-short{
+  width: 680px;
+  height: 170px;
+  border-radius: 7px;
+
+  font-family: 'Lato';
+  font-size: 14px;
+}
+
+.textarea-long{
+  width: 800px;
+  height: 300px;
+  border-radius: 7px;
+
+  font-family: 'Lato';
+  font-size: 14px;
+}
+
+/* btn */
+.btn{
+  padding: 7px 14px 7px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+
+  border: #171932;
+  background-color: #171932;
+  color: #fff;
+  font-family: 'SF Compact Display', sans-serif;
+}
+
