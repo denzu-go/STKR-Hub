@@ -90,6 +90,16 @@
       section{
         padding-bottom: 100px;
       }
+
+      .preview{
+        display: block;
+        width: 350px;
+        height: 150px;
+        border: 1px solid rgb(255, 255, 255);
+        margin-top: 10px;
+        text-align: center; /* Added to center the text */
+        line-height: 150px; /* Added to vertically center the text */
+      }
     </style>
   </head>
   <body>
@@ -151,23 +161,26 @@
 
                   <div class="left-content">
                     <form action="" method="post">
-                      <h3>Name</h3>
+                      <h4>Name</h4>
+                      <input
+                        class="input-text"
+                        type="text"
+                        name=""
+                        placeholder=""
+                        maxlength="70"
+                      />
+                      <br><br>
+
+                      <h4>Edition</h4>
                       <input
                         class="input-text"
                         type="text"
                         name=""
                         placeholder=""
                       />
+                      <br><br>
 
-                      <h3>Edition</h3>
-                      <input
-                        class="input-text"
-                        type="text"
-                        name=""
-                        placeholder=""
-                      />
-
-                      <h3>Players</h3>
+                      <h4>Players</h4>
                       <div class="players">
                           <input
                           class="input-text"
@@ -185,41 +198,27 @@
                           />
                           <p class="description">maximum</p>
                       </div>
+                      <br><br>
 
-                      <h3>Play Time</h3>
+                      <h4>Play Time</h4>
                       <input
                         class="input-text"
                         type="number"
                         name=""
                         placeholder="minutes"
                       />
+                      <br><br>
 
-                      <h3>Age</h3>
+                      <h4>Age</h4>
                       <input
                         class="input-text"
                         type="number"
                         name=""
                         placeholder=""
                       />
+                      <br><br>
                     </form>
                   </div>
-                  
-                  <!-- <div class="right-content">
-                    <h3>Name</h3>
-                    <span id="">name</span>
-
-                    <h3>Edition</h3>
-                    <span id="">edition</span>
-
-                    <h3>Players</h3>
-                    <span id="">players</span>
-
-                    <h3>Play Time</h3>
-                    <span id="">5 mins</span>
-
-                    <h3>Age</h3>
-                    <span id="">16+</span>
-                  </div> -->
                     
                 </div>
               </div>
@@ -243,21 +242,24 @@
 
                   <div class="left-content">
                     <form action="" method="post">
-                      <h3>Desired Markup</h3>
+                      <h4>Desired Markup</h4>
                       <input
                         class="input-text"
                         type="text"
                         name=""
                         placeholder=""
+                        
                       />
+                      <br><br>
 
-                      <h3>Price</h3>
-                      <div class="players">
+                      <h4>Price</h4>
+                      <div class="prices">
                           <input
                           class="input-text"
                           type="number"
                           name=""
                           placeholder=""
+                          
                           />
                           <p class="description">Manufacturer’s Suggested Retail Price (MSRP)</p>
 
@@ -285,6 +287,7 @@
                           />
                           <p class="description">Designer</p>
                       </div>
+                      <br><br>
 
                     </form>
                   </div>
@@ -311,48 +314,39 @@
 
                   <div class="left-marketing">
                     <form action="" method="post">
-                      <h3>Desired Markup</h3>
-                      <input
-                        class="input-text"
-                        type="text"
-                        name=""
-                        placeholder=""
-                      />
+                      <h4>Short Description</h4>
+                      <textarea 
+                        class="textarea-short"
+                        name="text" 
+                        cols="35" 
+                        rows="4" 
+                        minlength="20" 
+                        maxlength="400" 
+                        required
+                        placeholder="Enter your short description here"></textarea>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
+                        sunt tempora earum quaerat officiis fuga assumenda ipsa
+                        suscipit libero unde!
+                      </p>
+                      <br><br>
 
-                      <h3>Price</h3>
-                      <div class="players">
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Manufacturer’s Suggested Retail Price (MSRP)</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Cost</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">STKR Labs</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Designer</p>
-                      </div>
+                      <h4>Long Description</h4>
+                      <textarea
+                        class="textarea-long" 
+                        name="text" 
+                        cols="35" 
+                        rows="4" 
+                        minlength="20" 
+                        maxlength="400" 
+                        required
+                        placeholder="Enter your long description here"></textarea>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
+                        sunt tempora earum quaerat officiis fuga assumenda ipsa
+                        suscipit libero unde!
+                      </p>
+                      <br><br>
 
                     </form>
                   </div>
@@ -377,53 +371,18 @@
               <div class="content">
                 <div class="content-gamelogo">
 
-                  <div class="left-content">
-                    <form action="" method="post">
-                      <h3>Desired Markup</h3>
-                      <input
-                        class="input-text"
-                        type="text"
-                        name=""
-                        placeholder=""
-                      />
+                  <form method="post" action="" enctype="multipart/form-data">
+                    <input class="imgupload" type="file" name="fileImg" id="fileImg">
 
-                      <h3>Price</h3>
-                      <div class="players">
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Manufacturer’s Suggested Retail Price (MSRP)</p>
+                    <div class="preview" id="previewDiv">
+                      exactly 350 x 150 pixels <!-- Initial dimensions text -->
+                    </div>
+                    <br>
 
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Cost</p>
+                    <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
+                    <!-- <button type="button" onclick="submitData();">Submit</button> -->
 
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">STKR Labs</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Designer</p>
-                      </div>
-
-                    </form>
-                  </div>
+                  </form>
                     
                 </div>
               </div>
@@ -447,7 +406,7 @@
 
                   <div class="left-content">
                     <form action="" method="post">
-                      <h3>Desired Markup</h3>
+                      <h4>Desired Markup</h4>
                       <input
                         class="input-text"
                         type="text"
@@ -455,7 +414,7 @@
                         placeholder=""
                       />
 
-                      <h3>Price</h3>
+                      <h4>Price</h4>
                       <div class="players">
                           <input
                           class="input-text"
@@ -515,7 +474,7 @@
 
                   <div class="left-content">
                     <form action="" method="post">
-                      <h3>Desired Markup</h3>
+                      <h4>Desired Markup</h4>
                       <input
                         class="input-text"
                         type="text"
@@ -523,7 +482,7 @@
                         placeholder=""
                       />
 
-                      <h3>Price</h3>
+                      <h4>Price</h4>
                       <div class="players">
                           <input
                           class="input-text"
@@ -579,11 +538,61 @@
       <script src="../js/subnav.js"></script>
       <script src="../js/footer.js"></script>
       <script src="../../js/footer-for-components.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-      <script>
+      <script type="text/javascript">
+        // Preview
+        fileImg.onchange = evt => {
+          const [file] = fileImg.files;
+          if (file) {
+            $('#previewDiv').text(''); // Clear the dimensions text
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#previewDiv').html('<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />');
+            }
+            reader.readAsDataURL(file);
+          } else {
+            $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+          }
+        }
 
+        // Submit
+        function submitData() {
+          $(document).ready(function(){
+            var formData = new FormData();
+            var files = $('#fileImg')[0].files;
+            formData.append('fileImg', files[0]);
+
+            $.ajax({
+              url: 'function.php',
+              type: 'post',
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function(response) {
+                if(response == "Success") {
+                  alert("Successfully Added");
+                }
+                else if(response == "Invalid Extension") {
+                  alert("Invalid Extension");
+                }
+                else {
+                  alert("Please Fill Out The Form");
+                }
+              }
+            });
+          });
+        }
+
+        // Clear image
+        function clearImage() {
+          $('#img').attr('src', ''); // Clears the source of the image
+          $('#fileImg').val(''); // Clears the file input value
+          $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+        }
       </script>
+
     </div>
   </body>
 </html>
