@@ -180,3 +180,10 @@ p.description {
   position: absolute;
   right: 0;
 }
+
+
+/* VITALS */
+.content-vitals{
+  display: flex;
+  gap: 50px;
+}
