@@ -194,6 +194,12 @@ form{
   color: #fff;
 }
 
+h4{
+    font-family: 'SF Compact Displays', sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+
 /* input */
 input{
   width: 680px;
@@ -245,6 +251,12 @@ input[type='checkbox'] {
 
 }
 
+/* content-actionshots */
+.content-actionshots{
+  display: flex;
+  gap: 40px;
+}
+
 .checkbox{
   display: flex;
   row-gap: 20px;
@@ -253,10 +265,24 @@ input[type='checkbox'] {
 
 .actionshots-box{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background-color: #171932;
-  width: 600px;
+  background-color: #3D4169;
 
-  padding-left: 200px;
+  padding: 20px 20px 20px 20px;
+
+  border-radius: 7px;
+  width: 540px;
+  height: auto;
 }
+
+
+.imgupload1920 {
+  width: 500px;
+  height: 30px;
+  border-radius: 7px;
+
+  font-family: 'Lato';
+  font-size: 14px;
+}
+

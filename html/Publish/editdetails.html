@@ -102,14 +102,15 @@
       }
 
       .preview1920{
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(255, 255, 255);
+
         width: 500px;
         height: 281px;
-        border: 1px solid rgb(255, 255, 255);
-        margin-top: 10px;
-        text-align: center; /* Added to center the text */
-        line-height: 150px; /* Added to vertically center the text */
       }
+
     </style>
   </head>
   <body>
@@ -473,16 +474,60 @@
 
               <div class="content">
                 <div class="content-actionshots">
+                  <div class="actionshots-box">
+
+                    <video width="500" height="281" controls>
+                      Your browser does not support the video tag.
+                    </video>
+
+                    <input type='file' id='videoUpload' />
+                    <button class="btn" type="button" onclick="clearVideo()">Clear Video</button>
+                  </div>
 
                   <div class="actionshots-box">
+                    <h4>Banner 1</h4>
                     <form method="post" action="" enctype="multipart/form-data">
-                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
   
                       <div class="preview1920" id="previewDiv1920">
                         exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
                       </div>
                       <br>
+
+                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
+                      <button class="btn" type="button" onclick="clearImage1920();">Clear Picture</button> <!-- Added clear button -->
+                      <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                    </form>
+                  </div>
+                    
+                </div>
+
+                <div class="content-actionshots">
+
+                  <div class="actionshots-box">
+                    <h4>Banner 2</h4>
+                    <form method="post" action="" enctype="multipart/form-data">
   
+                      <div class="preview1920" id="previewDiv1920">
+                        exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
+                      </div>
+                      <br>
+
+                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
+                      <button class="btn" type="button" onclick="clearImage1920();">Clear Picture</button> <!-- Added clear button -->
+                      <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                    </form>
+                  </div>
+
+                  <div class="actionshots-box">
+                    <h4>Banner 3</h4>
+                    <form method="post" action="" enctype="multipart/form-data">
+  
+                      <div class="preview1920" id="previewDiv1920">
+                        exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
+                      </div>
+                      <br>
+
+                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
                       <button class="btn" type="button" onclick="clearImage1920();">Clear Picture</button> <!-- Added clear button -->
                       <!-- <button type="button" onclick="submitData();">Submit</button> -->
                     </form>
@@ -611,6 +656,23 @@
           $('#fileImg1920').val(''); // Clears the file input value
           $('#previewDiv1920').html('exactly 1920 x 1080 pixels'); // Display dimensions text
         }
+
+
+
+  // video 1920 x 1080 upload
+  function clearVideo() {
+    var videoElement = document.querySelector("video");
+    if (videoElement.src) {
+      videoElement.src = "";
+    }
+    document.getElementById("videoUpload").value = null;
+  }
+
+  document.getElementById("videoUpload").onchange = function(event) {
+    let file = event.target.files[0];
+    let blobURL = URL.createObjectURL(file);
+    document.querySelector("video").src = blobURL;
+  };
       </script>
 
     </div>
