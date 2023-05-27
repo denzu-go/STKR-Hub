@@ -100,6 +100,16 @@
         text-align: center; /* Added to center the text */
         line-height: 150px; /* Added to vertically center the text */
       }
+
+      .preview1920{
+        display: block;
+        width: 500px;
+        height: 281px;
+        border: 1px solid rgb(255, 255, 255);
+        margin-top: 10px;
+        text-align: center; /* Added to center the text */
+        line-height: 150px; /* Added to vertically center the text */
+      }
     </style>
   </head>
   <body>
@@ -381,7 +391,6 @@
 
                     <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
                     <!-- <button type="button" onclick="submitData();">Submit</button> -->
-
                   </form>
                     
                 </div>
@@ -403,55 +412,48 @@
 
               <div class="content">
                 <div class="content-taxonomy">
+                  <form class="genre">
+                    <div class="checkbox">
+                      <input type="checkbox" name="option1" value="Strategy Game">
+                      <label for="strategygame">Strategy Game</label><br>
+                    </div><br>
 
-                  <div class="left-content">
-                    <form action="" method="post">
-                      <h4>Desired Markup</h4>
-                      <input
-                        class="input-text"
-                        type="text"
-                        name=""
-                        placeholder=""
-                      />
+                    <div class="checkbox">
+                      <input type="checkbox" name="option2" value="Role-Playing Game">
+                      <label for="rpg">Role-Playing Game</label><br>                        
+                    </div><br>
 
-                      <h4>Price</h4>
-                      <div class="players">
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Manufacturer’s Suggested Retail Price (MSRP)</p>
+                    <div class="checkbox">
+                      <input type="checkbox" name="option3" value="Cooperative Game">
+                      <label for="cooperativegame">Cooperative Game</label><br>                      
+                    </div><br>
 
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Cost</p>
+                    <div class="checkbox">
+                      <input type="checkbox" name="option1" value="Deck-Building Game">
+                      <label for="deckbuildinggame">Deck-Building Game</label><br>                      
+                    </div><br>
 
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">STKR Labs</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Designer</p>
-                      </div>
-
-                    </form>
-                  </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="option2" value="Party Game">
+                      <label for="partygame">Party Game</label><br>                      
+                    </div><br>
                     
+                    <div class="checkbox">
+                      <input type="checkbox" name="option3" value="Miniature Wargame">
+                      <label for="miniaturewargame">Miniature Wargame</label><br>                      
+                    </div><br>
+
+                    <div class="checkbox">
+                      <input type="checkbox" name="option1" value="Puzzle Game">
+                      <label for="puzzlegame">Puzzle Game</label><br>                        
+                    </div><br>
+
+                    <div class="checkbox">
+                      <input type="checkbox" name="option2" value="Card Game">
+                      <label for="cardgame">Card Game</label><br>                        
+                    </div><br>
+
+                  </form>
                 </div>
               </div>
             </section>
@@ -472,51 +474,17 @@
               <div class="content">
                 <div class="content-actionshots">
 
-                  <div class="left-content">
-                    <form action="" method="post">
-                      <h4>Desired Markup</h4>
-                      <input
-                        class="input-text"
-                        type="text"
-                        name=""
-                        placeholder=""
-                      />
-
-                      <h4>Price</h4>
-                      <div class="players">
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Manufacturer’s Suggested Retail Price (MSRP)</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Cost</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">STKR Labs</p>
-
-                          <input
-                          class="input-text"
-                          type="number"
-                          name=""
-                          placeholder=""
-                          />
-                          <p class="description">Designer</p>
+                  <div class="actionshots-box">
+                    <form method="post" action="" enctype="multipart/form-data">
+                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
+  
+                      <div class="preview1920" id="previewDiv1920">
+                        exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
                       </div>
-
+                      <br>
+  
+                      <button class="btn" type="button" onclick="clearImage1920();">Clear Picture</button> <!-- Added clear button -->
+                      <!-- <button type="button" onclick="submitData();">Submit</button> -->
                     </form>
                   </div>
                     
@@ -553,7 +521,7 @@
             }
             reader.readAsDataURL(file);
           } else {
-            $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+            $('#previewDiv').html('exactly 350 x 150 pixels'); // Display dimensions text
           }
         }
 
@@ -589,7 +557,59 @@
         function clearImage() {
           $('#img').attr('src', ''); // Clears the source of the image
           $('#fileImg').val(''); // Clears the file input value
-          $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+          $('#previewDiv').html('exactly 350 x 150 pixels'); // Display dimensions text
+        }
+
+
+        // 1920 x 1080 img preview upload =========================
+        // Preview
+        fileImg1920.onchange = evt => {
+          const [file] = fileImg1920.files;
+          if (file) {
+            $('#previewDiv1920').text(''); // Clear the dimensions text
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#previewDiv1920').html('<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />');
+            }
+            reader.readAsDataURL(file);
+          } else {
+            $('#previewDiv1920').html('exactly 1920 x 1080 pixels'); // Display dimensions text
+          }
+        }
+
+        // Submit
+        function submitData1920() {
+          $(document).ready(function(){
+            var formData = new FormData();
+            var files = $('#fileImg1920')[0].files;
+            formData.append('fileImg1920', files[0]);
+
+            $.ajax({
+              url: 'function.php',
+              type: 'post',
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function(response) {
+                if(response == "Success") {
+                  alert("Successfully Added");
+                }
+                else if(response == "Invalid Extension") {
+                  alert("Invalid Extension");
+                }
+                else {
+                  alert("Please Fill Out The Form");
+                }
+              }
+            });
+          });
+        }
+
+        // Clear image
+        function clearImage1920() {
+          $('#img').attr('src', ''); // Clears the source of the image
+          $('#fileImg1920').val(''); // Clears the file input value
+          $('#previewDiv1920').html('exactly 1920 x 1080 pixels'); // Display dimensions text
         }
       </script>
 

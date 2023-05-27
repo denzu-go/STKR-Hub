@@ -234,3 +234,29 @@ input{
   font-family: 'SF Compact Display', sans-serif;
 }
 
+/* checkbox */
+input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  border-radius: 7px;
+
+  font-family: 'Lato';
+  font-size: 14px;
+
+}
+
+.checkbox{
+  display: flex;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.actionshots-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171932;
+  width: 600px;
+
+  padding-left: 200px;
+}
