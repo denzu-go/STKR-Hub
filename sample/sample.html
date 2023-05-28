@@ -1,124 +1,26 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Sample 1</title>
-
-    <style>
-        @import url(../css/header.css);
-        @import url(../css/footer.css);
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .section {
-            display: none; /* Initially hide all sections */
-        }
-        .active {
-            display: block; /* Show the active section */
-        }
-    </style>
-
-    <script src="./js/main.js"></script>  
-    <script src="./js/login.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/header-for-components.js"></script>
-    <script src="../js/subnav.js"></script>
-    <script src="../js/footer.js"></script>
-    <script src="../js/footer-for-components.js"></script> 
-    <script src="../js/section visibility.js"></script> 
-    <script src="../js/activenav.js"></script>
-    <script>
-        function switchSection(sectionId) {
-            
-            var sections = document.getElementsByClassName("section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("section-active"); // Hide all sections
-            }
-
-            var section = document.getElementById(sectionId);
-            if (section) {
-                section.classList.add("section-active"); // Show the selected section
-                history.replaceState(null, null, '#' + sectionId); // Update the URL fragment
-            }
-        }
-
-        window.onload = function() {
-            var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-            if (sectionId) {
-                switchSection(sectionId); // Activate the section based on the URL fragment
-            } else {
-                switchSection('allcomponents'); // Default to the home section if no fragment is present
-            }
-        }
-    </script>
+<title>Page Title</title>
 </head>
 <body>
-    <div class="container">
 
-        <!-- HEADER -->
-        <my-header-for-components></my-header-for-components>
+<input type='file' id='videoUpload' />
 
-        <!-- MAIN -->
-        <main>
-            <div class="sidemenu">
-                <div class="side-left">
+<video width="500" height="281" controls>
+  Your browser does not support the video tag.
+</video>
 
-                </div>
-                <!-- FIXME:FIXME:FIXME:FIXME:FIXME:FIXME: -->
-                <div class="side-right">
-                    <div class="ul-container">
-                        <ul>
-                            <nav>
-                                <a href="#allcomponents" onclick="switchSection('allcomponents')">All Components</a>
+<button onclick="clearVideo()">Clear Video</button>
 
-                                <a href="#addrulebook" onclick="switchSection('addrulebook')">Add Rulebook</a>
+<script>
+  function clearVideo() {
+    var videoElement = document.querySelector("video");
+    if (videoElement.src) {
+      videoElement.src = "";
+    }
+    document.getElementById("videoUpload").value = null;
+  }
+</script>
 
-                                <a href="#addbox" onclick="switchSection('addbox')">Add box</a>
-
-                                <a href="#name" onclick="switchSection('name')">Name</a>
-                            </nav>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- TODO:TODO:TODO:TODO:TODO:TODO:TODO: -->
-            <div class="body">
-                <!-- sections -->
-                <section id="allcomponents" class="section active">
-                    <h1>allcomponents</h1>
-                    <p>This is the allcomponents section.</p>
-                </section>
-            
-                <section id="addrulebook" class="section">
-                    <h1>addrulebook</h1>
-                    <p>This is the addrulebook section.</p>
-                </section>
-                
-                <section id="addbox" class="section">
-                    <h1>addbox</h1>
-                    <p>This is the addbox section.</p>
-                </section> 
-
-                <section id="name" class="section">
-                    <h1>name</h1>
-                    <p>This is the name section.</p>
-                </section> 
-            </div>
-        
-        </main>
-
-        <!-- FOOTER -->
-        <my-footer></my-footer>
-
-        
-    </div>
 </body>
 </html>
