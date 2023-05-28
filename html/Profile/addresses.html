@@ -78,7 +78,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <title>Profile</title>
+    <title>Addresses</title>
 
     <style>
       @import url(../css/header.css);
@@ -101,16 +101,57 @@
         line-height: 150px; /* Added to vertically center the text */
       }
 
-      .preview1920{
-        display: flex;
+      /* add new address popup */
+    .add-new-address-popup{
+        position: absolute;
+
         justify-content: center;
         align-items: center;
-        border: 1px solid rgb(255, 255, 255);
 
-        width: 500px;
-        height: 281px;
-      }
+        width: 200px;
+        height: 200px;
+        background-color: chartreuse;
+    }
 
+
+    /* Modal Styling */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    .modal-content {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 700px;
+        height: auto;
+
+        background-color: #272A4E;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+    }
+
+    /* Button Styling */
+    .popup-button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
     </style>
   </head>
   <body>
@@ -121,8 +162,8 @@
       <!-- MAIN -->
       <main>
         <div class="upper-section">
-          <img src="../../img/image-profile.png" alt="" id="profilepic">
-          <h1><span id="username">username</span></h1>
+            <img src="../../img/image-profile.png" alt="" id="profilepic">
+            <h1><span id="username">username</span></h1>
         </div>
 
         <div class="lower-section">
@@ -137,7 +178,7 @@
       
                         <li>
                           <a href="/html/Profile/profile.html">
-                            <div class="container-a  container-active">
+                            <div class="container-a">
                               <span id="nav"> Profile </span>
                             </div>
                           </a>
@@ -161,7 +202,7 @@
                         
                         <li>
                           <a href="/html/Profile/addresses.html">
-                            <div class="container-a">
+                            <div class="container-a container-active">
                               <span id="nav"> Addresses </span>
                             </div>
                           </a>
@@ -191,49 +232,46 @@
             
             <div class="body">
             <div class="container-body">
-                <section id="profile" class="section">
-                    <button class="btn" type="button">Edit</button>
-                    
+                <section id="email" class="section">
+                    <button class="add-new-address" onclick="openModal()">
+                        Add new address
+                    </button>
+
+                    <div class="modal-overlay" id="modal-overlay"></div>
+                    <div class="modal-content" id="modal-content">
+
+                      <form action="" method="post">
+                        <h2>Add New Address</h2>
+                        <br>
+
+                        <h5>Full Name</h5>
+                        <input class="input-text" type="text" name="" placeholder="Enter your Full Name"/>
                         <br><br>
-                        <form action="" method="post">
-                            <h4>username</h4>
-                            <input
-                            class="input-text"
-                            type="text"
-                            name=""
-                            placeholder="username"
-                            maxlength="70"
-                            />
-                            <br><br>
 
-                            <h4>Real Name</h4>
-                            <input
-                            class="input-text"
-                            type="text"
-                            name=""
-                            placeholder="Denzel Go"
-                            maxlength="70"
-                            />
-                            <br><br>
+                        <h5>Mobile Number</h5>
+                        <input class="input-text" type="text" name="" placeholder="Enter your mobile"/>
+                        <br><br>
 
-                            <h4>Avatar</h4>
-                            <form method="post" action="" enctype="multipart/form-data">
-            
-                                <div class="preview" id="previewDiv">
-                                  upload your avatar <!-- Initial dimensions text -->
-                                </div>
-                                <br>
-                                
-                                <input class="imgupload" type="file" name="fileImg" id="fileImg"><br>
-                                <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
-                                <!-- <button type="button" onclick="submitData();">Submit</button> -->
-                            </form>
-                        </form>
-                    
-                        <br><br><br>
-                        <button type="submit" class="submit" id="profile-submit">
-                            Save Changes
-                        </button>
+                        <h5>Full Address</h5>
+                        <input class="input-text" type="text" name="" placeholder="Enter your full address"/>
+                        <br><br>
+
+                        <h5>City/Province</h5>
+                        <input class="input-text" type="text" name="" placeholder="Enter your City/Province"/>
+                        <br><br>
+
+                        <h5>Postal Code</h5>
+                        <input class="input-text" type="text" name="" placeholder="Enter your Postal Code"/>
+                        <br><br>
+
+                      </form>
+
+                      <div class="buttons">
+                        <button onclick="closeModal()" class="close">Close</button>
+                        <button type="submit" class="submit">Update Changes</button>
+                      </div>
+                                                                        
+                    </div>
                 </section>
             </div>
             </div>            
@@ -254,55 +292,21 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
       <script>
-        // Preview
-        fileImg.onchange = evt => {
-          const [file] = fileImg.files;
-          if (file) {
-            $('#previewDiv').text(''); // Clear the dimensions text
-            var reader = new FileReader();
-            reader.onload = function(e) {
-              $('#previewDiv').html('<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />');
+        function openModal() {
+              var modalOverlay = document.getElementById('modal-overlay');
+              var modalContent = document.getElementById('modal-content');
+
+              modalOverlay.style.display = 'block';
+              modalContent.style.display = 'block';
             }
-            reader.readAsDataURL(file);
-          } else {
-            $('#previewDiv').html('upload your avatar'); // Display dimensions text
-          }
-        }
 
-        // Submit
-        function submitData() {
-          $(document).ready(function(){
-            var formData = new FormData();
-            var files = $('#fileImg')[0].files;
-            formData.append('fileImg', files[0]);
+            function closeModal() {
+              var modalOverlay = document.getElementById('modal-overlay');
+              var modalContent = document.getElementById('modal-content');
 
-            $.ajax({
-              url: 'function.php',
-              type: 'post',
-              data: formData,
-              contentType: false,
-              processData: false,
-              success: function(response) {
-                if(response == "Success") {
-                  alert("Successfully Added");
-                }
-                else if(response == "Invalid Extension") {
-                  alert("Invalid Extension");
-                }
-                else {
-                  alert("Please Fill Out The Form");
-                }
-              }
-            });
-          });
-        }
-
-        // Clear image
-        function clearImage() {
-          $('#img').attr('src', ''); // Clears the source of the image
-          $('#fileImg').val(''); // Clears the file input value
-          $('#previewDiv').html('upload your avatar'); // Display dimensions text
-        }
+              modalOverlay.style.display = 'none';
+              modalContent.style.display = 'none';
+            } 
       </script>
 
     </div>

@@ -101,7 +101,7 @@
         line-height: 150px; /* Added to vertically center the text */
       }
 
-      .preview1920{
+      #previewDiv1920{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -383,13 +383,13 @@
                 <div class="content-gamelogo">
 
                   <form method="post" action="" enctype="multipart/form-data">
-                    <input class="imgupload" type="file" name="fileImg" id="fileImg">
 
                     <div class="preview" id="previewDiv">
                       exactly 350 x 150 pixels <!-- Initial dimensions text -->
                     </div>
                     <br>
 
+                    <input class="imgupload" type="file" name="fileImg" id="fileImg"><br>
                     <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
                     <!-- <button type="button" onclick="submitData();">Submit</button> -->
                   </form>
@@ -487,15 +487,13 @@
                   <div class="actionshots-box">
                     <h4>Banner 1</h4>
                     <form method="post" action="" enctype="multipart/form-data">
-  
-                      <div class="preview1920" id="previewDiv1920">
-                        exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
+                      <div class="preview" id="previewDiv1920">
+                        Exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
                       </div>
                       <br>
-
-                      <input class="imgupload1920" type="file" name="fileImg1920" id="fileImg1920">
-                      <button class="btn" type="button" onclick="clearImage1920();">Clear Picture</button> <!-- Added clear button -->
-                      <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                      <input class="imgupload" type="file" name="fileImg1920" id="fileImg1920"><br>
+                      <button class="btn" type="button" onclick="clearImage('img1920', 'fileImg1920', 'previewDiv1920', 1920, 1080);">Clear Picture</button> <!-- Added clear button -->
+                      <!-- <button type="button" onclick="submitData('fileImg1920', 'function.php');">Submit</button> -->
                     </form>
                   </div>
                     
@@ -623,11 +621,11 @@
         }
 
         // Submit
-        function submitData1920() {
+        function submitData() {
           $(document).ready(function(){
             var formData = new FormData();
-            var files = $('#fileImg1920')[0].files;
-            formData.append('fileImg1920', files[0]);
+            var files = $('#fileImg')[0].files;
+            formData.append('fileImg', files[0]);
 
             $.ajax({
               url: 'function.php',
@@ -652,7 +650,7 @@
 
         // Clear image
         function clearImage1920() {
-          $('#img').attr('src', ''); // Clears the source of the image
+          $('#img1920').attr('src', ''); // Clears the source of the image
           $('#fileImg1920').val(''); // Clears the file input value
           $('#previewDiv1920').html('exactly 1920 x 1080 pixels'); // Display dimensions text
         }
