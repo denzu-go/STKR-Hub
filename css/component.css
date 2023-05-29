@@ -37,7 +37,9 @@ main{
   height: 500px;
 }
 
-
+.sub-content{
+  text-align: center;
+}
 
 .sub-content img{
   height: 200px;
