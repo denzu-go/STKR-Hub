@@ -1,90 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Image Upload</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+  <title>Multiple Image Upload and Preview</title>
   <style>
-      #previewDiv1920{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid rgb(255, 255, 255);
+    .preview-container {
+      margin-bottom: 20px;
+    }
 
-        width: 500px;
-        height: 281px;
-      }
+    .preview-container img {
+      max-width: 300px;
+      max-height: 300px;
+      margin-bottom: 10px;
+    }
   </style>
-</head>
-<body>
+  <script>
+    function handleImageUpload(event, previewId, uploadId) {
+      var preview = document.getElementById(previewId);
+      var file = event.target.files[0];
+      var reader = new FileReader();
 
-<form method="post" action="" enctype="multipart/form-data">
-  <div class="preview" id="previewDiv1920">
-    Exactly 1920 x 1080 pixels <!-- Initial dimensions text -->
-  </div>
-  <br>
-  <input class="imgupload" type="file" name="fileImg1920" id="fileImg1920"><br>
-  <button class="btn" type="button" onclick="clearImage('img1920', 'fileImg1920', 'previewDiv1920', 1920, 1080);">Clear Picture</button> <!-- Added clear button -->
-  <!-- <button type="button" onclick="submitData('fileImg1920', 'function.php');">Submit</button> -->
-</form>
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      }
 
-<script>
-  // Preview
-  function previewImage(inputId, previewId, width, height) {
-    const fileInput = document.getElementById(inputId);
-    const previewDiv = document.getElementById(previewId);
-
-    fileInput.onchange = function(evt) {
-      const [file] = fileInput.files;
       if (file) {
-        previewDiv.textContent = ''; // Clear the dimensions text
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          previewDiv.innerHTML = '<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />';
-        };
         reader.readAsDataURL(file);
       } else {
-        previewDiv.innerHTML = 'Exactly ' + width + ' x ' + height + ' pixels'; // Display dimensions text
+        preview.src = "";
       }
-    };
-  }
+    }
 
-  // Submit
-  function submitData(inputId, url) {
-    $(document).ready(function() {
-      var formData = new FormData();
-      var files = $('#' + inputId)[0].files;
-      formData.append(inputId, files[0]);
+    function handleClearImage(previewId, uploadId) {
+      var preview = document.getElementById(previewId);
+      preview.src = "";
+      document.getElementById(uploadId).value = null;
+    }
+  </script>
+</head>
+<body>
+  <div class="preview-container">
+    <input type="file" id="upload1" onchange="handleImageUpload(event, 'preview1', 'upload1')" accept="image/*">
+    <img id="preview1" src="" alt="Preview">
+    <button onclick="handleClearImage('preview1', 'upload1')">Clear Image</button>
+  </div>
 
-      $.ajax({
-        url: url,
-        type: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(response) {
-          if (response == 'Success') {
-            alert('Successfully Added');
-          } else if (response == 'Invalid Extension') {
-            alert('Invalid Extension');
-          } else {
-            alert('Please Fill Out The Form');
-          }
-        }
-      });
-    });
-  }
+  <div class="preview-container">
+    <input type="file" id="upload2" onchange="handleImageUpload(event, 'preview2', 'upload2')" accept="image/*">
+    <img id="preview2" src="" alt="Preview">
+    <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
+  </div>
 
-  // Clear image
-  function clearImage(imageId, inputId, previewId, width, height) {
-    $('#' + imageId).attr('src', ''); // Clears the source of the image
-    $('#' + inputId).val(''); // Clears the file input value
-    $('#' + previewId).html('Exactly ' + width + ' x ' + height + ' pixels'); // Display dimensions text
-  }
+  <div class="preview-container">
+    <input type="file" id="upload2" onchange="handleImageUpload(event, 'preview2', 'upload2')" accept="image/*">
+    <img id="preview2" src="" alt="Preview">
+    <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
+  </div>
 
-  // Call the functions
-  previewImage('fileImg1920', 'previewDiv1920', 1920, 1080);
-</script>
+  <!-- Add more div sections for additional image uploads if needed -->
+
+  <script>
+    // Automatically generate unique IDs for new sections
+    var sectionCount = 2; // Update with the number of existing sections
+
+  </script>
+
+  <!-- Example button to add a new image section -->
+  <button onclick="addImageSection()">Add Image Section</button>
 
 </body>
 </html>

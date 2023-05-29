@@ -318,3 +318,162 @@ input{
 }
 
 /* end of add to cart ----------------------------*/
+
+/* btn */
+.btn{
+    padding: 7px 14px 7px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+  
+    border: #171932;
+    background-color: #171932;
+    color: #fff;
+    font-family: 'SF Compact Display', sans-serif;
+}
+
+/* submit ----------------------------*/
+.submit{
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+
+    color: #fff;
+
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    height: 100%;
+
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+    background-size: 300%;
+    border-radius: 7px;
+    z-index: 1;
+}
+
+.submit:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+}
+  
+@keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 400%;
+    }
+}
+  
+.submit:before {
+    content: '';
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+    background-size: 400%;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.submit:hover::before {
+    filter: blur(10px);
+}
+  
+.submit:active {
+    background: linear-gradient(32deg,#ffffff,#ffffff,#ffffff, #ffffff);
+    /* background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8); */
+}
+
+/* end of add to cart ----------------------------*/
+
+
+
+
+
+
+/* cancel */
+.cancel{
+  padding: 7px 14px 7px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+
+  border: #171932;
+  background-color: #171932;
+  color: #fff;
+  font-family: 'SF Compact Display', sans-serif;
+}
+
+/* cancel ----------------------------*/
+.cancel{
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 500;
+
+  color: #fff;
+
+  padding: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+  height: 100%;
+
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+  background-size: 300%;
+  border-radius: 7px;
+  z-index: 1;
+}
+
+.cancel:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.cancel:before {
+  content: '';
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  position: absolute;
+  background: linear-gradient(90deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8);
+  background-size: 400%;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.cancel:hover::before {
+  filter: blur(10px);
+}
+
+.cancel:active {
+  background: linear-gradient(32deg,#ffffff,#ffffff,#ffffff, #ffffff);
+  /* background: linear-gradient(32deg,#b85fe8,#28dbe5,#3a88e6, #b85fe8); */
+}
+
+/* end of cancel ----------------------------*/

@@ -1,81 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Upload Image Ajax</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<style media="screen">
-.preview{
-  display: block;
-  width: 350px;
-  height: 150px;
-  border: 1px solid black;
-  margin-top: 10px;
-  text-align: center; /* Added to center the text */
-  line-height: 150px; /* Added to vertically center the text */
-}
-</style>
-<body>
-  <form method="post" action="" enctype="multipart/form-data">
-    <input type="file" name="fileImg" id="fileImg">
-    <button type="button" onclick="submitData();">Submit</button>
-    <button type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
-    <div class="preview" id="previewDiv">
-      350 x 150 pixels <!-- Initial dimensions text -->
-    </div>
-  </form>
+  <title>Multiple Image Upload and Preview</title>
+  <style>
+    .preview-container {
+      margin-bottom: 20px;
+    }
 
-  <script type="text/javascript">
-    // Preview
-    fileImg.onchange = evt => {
-      const [file] = fileImg.files;
+    .preview-container img {
+      max-width: 300px;
+      max-height: 300px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function handleImageUpload(event, previewId, uploadId) {
+      var preview = document.getElementById(previewId);
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      }
+
       if (file) {
-        $('#previewDiv').text(''); // Clear the dimensions text
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          $('#previewDiv').html('<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />');
-        }
         reader.readAsDataURL(file);
       } else {
-        $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+        preview.src = "";
       }
     }
 
-    // Submit
-    function submitData() {
-      $(document).ready(function(){
-        var formData = new FormData();
-        var files = $('#fileImg')[0].files;
-        formData.append('fileImg', files[0]);
-
-        $.ajax({
-          url: 'function.php',
-          type: 'post',
-          data: formData,
-          contentType: false,
-          processData: false,
-          success: function(response) {
-            if(response == "Success") {
-              alert("Successfully Added");
-            }
-            else if(response == "Invalid Extension") {
-              alert("Invalid Extension");
-            }
-            else {
-              alert("Please Fill Out The Form");
-            }
-          }
-        });
-      });
-    }
-
-    // Clear image
-    function clearImage() {
-      $('#img').attr('src', ''); // Clears the source of the image
-      $('#fileImg').val(''); // Clears the file input value
-      $('#previewDiv').html('350 x 150 pixels'); // Display dimensions text
+    function handleClearImage(previewId, uploadId) {
+      var preview = document.getElementById(previewId);
+      preview.src = "";
+      document.getElementById(uploadId).value = null;
     }
   </script>
+</head>
+<body>
+  <div class="preview-container">
+    <input type="file" id="upload1" onchange="handleImageUpload(event, 'preview1', 'upload1')" accept="image/*">
+    <img id="preview1" src="" alt="Preview">
+    <button onclick="handleClearImage('preview1', 'upload1')">Clear Image</button>
+  </div>
+
+  <div class="preview-container">
+    <input type="file" id="upload2" onchange="handleImageUpload(event, 'preview2', 'upload2')" accept="image/*">
+    <img id="preview2" src="" alt="Preview">
+    <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
+  </div>
+
+  <!-- Add more div sections for additional image uploads if needed -->
+
+  <script>
+    // Automatically generate unique IDs for new sections
+    var sectionCount = 2; // Update with the number of existing sections
+
+    function addImageSection() {
+      sectionCount++;
+      var previewId = "preview" + sectionCount;
+      var uploadId = "upload" + sectionCount;
+
+      var newSection = document.createElement("div");
+      newSection.className = "preview-container";
+      newSection.innerHTML = `
+        <input type="file" id="${uploadId}" onchange="handleImageUpload(event, '${previewId}', '${uploadId}')" accept="image/*">
+        <img id="${previewId}" src="" alt="Preview">
+        <button onclick="handleClearImage('${previewId}', '${uploadId}')">Clear Image</button>
+      `;
+
+      document.body.appendChild(newSection);
+    }
+  </script>
+
+  <!-- Example button to add a new image section -->
+  <button onclick="addImageSection()">Add Image Section</button>
+
 </body>
 </html>
