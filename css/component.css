@@ -34,6 +34,7 @@ main{
   display: flex;
   background: rgb(65, 70, 119);
   justify-content: center;
+  height: 500px;
 }
 
 
@@ -43,8 +44,14 @@ main{
   width: 200px;
   background-color: rgb(65, 70, 119);
   padding: 20px 20px;
-  
+  border-radius: 30px;
 }
+
+.sub-content img:hover{
+    height: 210px;
+    width: 210px;
+    transition: .3s;
+  }
 
 .sub-content p{
   font-weight: 700;
