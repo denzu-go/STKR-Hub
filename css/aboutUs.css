@@ -48,3 +48,11 @@ main{
     padding-bottom: 30px;
 }
 
+.container .subp{
+    padding-left: 150px;
+    width: 80%;
+    text-align: justify;
+    padding-bottom: 30px;
+    opacity: 0.5;
+}
+
