@@ -1,0 +1,58 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/subnav.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+}
+
+/* main CSS */
+.title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'SF Pro Display', sans-serif;
+  background-color: rgb(65, 70, 119);
+  padding: 20px 200px 10px;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background: rgb(15,16,32);
+  background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
+}
+
+.container{
+      background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
+      color: #fff;
+      height: 700px;
+}
+
+.container h1{
+    padding: 60px 150px;
+    padding-bottom: 10px;
+}
+
+.container p{
+    padding-left: 150px;
+    width: 80%;
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+.container .subp{
+    padding-left: 150px;
+    width: 80%;
+    text-align: justify;
+    padding-bottom: 30px;
+    opacity: 0.5;
+}
+

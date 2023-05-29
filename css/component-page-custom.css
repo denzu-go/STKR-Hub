@@ -173,6 +173,11 @@ table.GeneratedTable td, table.GeneratedTable th {
     margin-bottom: 100px;
 }
 
+.steps-custom a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .custom-upload{
     background: #171932;
     width: 183px;
