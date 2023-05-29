@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="../css/make phase.css" /> -->
+
+    <!-- icons -->
+    <link rel="shortcut icon" type="image" href="../../img/logo.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/svg-with-js.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.cdnfonts.com/css/akira-expanded"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-compact-display"
+      rel="stylesheet"
+    />
+
+    <!-- for text-spinner -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Profile</title>
+
+    <style>
+      @import url(../css/header.css);
+      @import url(../css/footer.css);
+      @import url(../css/subnav.css);
+      @import url(../css/make-table.css);
+      @import url(../../css/profile.css);
+
+      section{
+        padding-bottom: 100px;
+      }
+
+      .preview{
+        display: block;
+        width: 150px;
+        height: 150px;
+        border: 1px solid rgb(255, 255, 255);
+        margin-top: 10px;
+        text-align: center; /* Added to center the text */
+        line-height: 150px; /* Added to vertically center the text */
+      }
+
+      .preview1920{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(255, 255, 255);
+
+        width: 500px;
+        height: 281px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <my-header-for-components></my-header-for-components>
+
+      <!-- MAIN -->
+      <main>
+        <div class="upper-section">
+          <img src="../../img/image-profile.png" alt="" id="profilepic">
+          <h1><span id="username">username</span></h1>
+        </div>
+
+        <div class="lower-section">
+            <div class="sidemenu">
+                <div class="side-left">
+                  
+                </div>
+                <div class="side-right">
+                  <div class="ul-container">
+                    <ul>
+                      <nav>
+      
+                        <li>
+                          <a href="/html/Profile/profile.html">
+                            <div class="container-a  container-active">
+                              <span id="nav"> Profile </span>
+                            </div>
+                          </a>
+                        </li>
+      
+                        <li>
+                          <a href="/html/Profile/email.html">
+                            <div class="container-a">
+                              <span id="nav"> Email </span>
+                            </div>
+                          </a>
+                        </li>
+      
+                        <li>
+                          <a href="/html/Profile/password.html">
+                            <div class="container-a">
+                              <span id="nav"> Password </span>
+                            </div>
+                          </a>
+                        </li>    
+                        
+                        <li>
+                          <a href="/html/Profile/addresses.html">
+                            <div class="container-a">
+                              <span id="nav"> Addresses </span>
+                            </div>
+                          </a>
+                        </li>                  
+      
+                        <li>
+                          <a href="/html/Profile/mypurchase.html">
+                            <div class="container-a">
+                              <span id="nav"> My Purchase </span>
+                            </div>
+                          </a>
+                        </li>                  
+      
+                        <li>
+                          <a href="#">
+                            <div class="container-a">
+                              <span id="nav"> Signout </span>
+                            </div>
+                          </a>
+                        </li>                  
+      
+                      </nav>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="body">
+            <div class="container-body">
+                <section id="profile" class="section">
+                    <button class="btn" type="button">Edit</button>
+                    
+                        <br><br>
+                        <form action="" method="post">
+                            <h4>username</h4>
+                            <input
+                            class="input-text"
+                            type="text"
+                            name=""
+                            placeholder="username"
+                            maxlength="70"
+                            />
+                            <br><br>
+
+                            <h4>Real Name</h4>
+                            <input
+                            class="input-text"
+                            type="text"
+                            name=""
+                            placeholder="Denzel Go"
+                            maxlength="70"
+                            />
+                            <br><br>
+
+                            <h4>Avatar</h4>
+                            <form method="post" action="" enctype="multipart/form-data">
+            
+                                <div class="preview" id="previewDiv">
+                                  upload your avatar <!-- Initial dimensions text -->
+                                </div>
+                                <br>
+                                
+                                <input class="imgupload" type="file" name="fileImg" id="fileImg"><br>
+                                <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
+                                <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                            </form>
+                        </form>
+                    
+                        <br><br><br>
+                        <button type="submit" class="submit" id="profile-submit">
+                            Save Changes
+                        </button>
+                </section>
+            </div>
+            </div>            
+        </div>
+
+      </main>
+
+      <!-- FOOTER -->
+      <my-footer-for-components></my-footer-for-components>
+      <script src="./js/main.js"></script>
+      <script src="./js/login.js"></script>
+      <script src="../../js/main.js"></script>
+      <script src="../../js/header.js"></script>
+      <script src="../../js/header-for-components.js"></script>
+      <script src="../js/subnav.js"></script>
+      <script src="../js/footer.js"></script>
+      <script src="../../js/footer-for-components.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script>
+        // Preview
+        fileImg.onchange = evt => {
+          const [file] = fileImg.files;
+          if (file) {
+            $('#previewDiv').text(''); // Clear the dimensions text
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              $('#previewDiv').html('<img src="' + e.target.result + '" style="width: 100%; height: 100%;" />');
+            }
+            reader.readAsDataURL(file);
+          } else {
+            $('#previewDiv').html('upload your avatar'); // Display dimensions text
+          }
+        }
+
+        // Submit
+        function submitData() {
+          $(document).ready(function(){
+            var formData = new FormData();
+            var files = $('#fileImg')[0].files;
+            formData.append('fileImg', files[0]);
+
+            $.ajax({
+              url: 'function.php',
+              type: 'post',
+              data: formData,
+              contentType: false,
+              processData: false,
+              success: function(response) {
+                if(response == "Success") {
+                  alert("Successfully Added");
+                }
+                else if(response == "Invalid Extension") {
+                  alert("Invalid Extension");
+                }
+                else {
+                  alert("Please Fill Out The Form");
+                }
+              }
+            });
+          });
+        }
+
+        // Clear image
+        function clearImage() {
+          $('#img').attr('src', ''); // Clears the source of the image
+          $('#fileImg').val(''); // Clears the file input value
+          $('#previewDiv').html('upload your avatar'); // Display dimensions text
+        }
+      </script>
+
+    </div>
+  </body>
+</html>

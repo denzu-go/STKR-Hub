@@ -4,73 +4,7 @@
 @import url(../css/make-table.css);
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-body{
-    width: 100%;
-} 
 
-main{
-    display: flex;
-    justify-content: center;
-    
-    background: rgb(15,16,32);
-    background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
-}
-
-.sidemenu{
-    display: flex;
-
-    background: linear-gradient(157deg, rgba(119,88,210,1) 0%, rgba(217,176,243,1) 100%);
-
-    width: 290px;
-    height: 650px;
-}
-
-.side-left{
-    position: relative;
-
-    width: 76px;
-    height: 100%;
-
-    background-color: rgba(29, 32, 62, 0.3);
-}
-
-.make-bg{
-    position: absolute;
-    right: 0;
-
-    width: 90%;
-    height: 650px;
-}
-
-.side-right{
-    width: calc(290px - 76px);
-    height: 100%;
-
-    background-color: rgba(44, 47, 72, 0.5);
-}
-
-
-.body{
-    height: 650px;
-    width: 100%;
-
-    overflow: hidden;
-}
-
-.container-body::-webkit-scrollbar{
-    display: none;
-}
-
-.side-right{
-    display: flex;
-    width: 100%;
-}
 
 .side-right ul{
     display: flex;
@@ -103,7 +37,7 @@ a{
 }
 
 
-.active{
+.container-active{
     background-color: #272a4e;
 }
 
@@ -121,23 +55,6 @@ a{
     padding: 30px;
 }
 
-/* title */
-.title-of-section{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    font-family: 'SF Compact Display', sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-
-    color: #CDABFF;
-    border-bottom: 1px solid #c8c8c8;
-
-    padding-bottom: 10px;
-
-    margin-bottom: 20px;
-}
 
 p.description{
     font-family: 'Lato';
@@ -155,15 +72,6 @@ p.description{
     height: auto;
 }
 
-
-.right-side{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    width: 230px;
-    height: auto;
-}
 
 .total-cost, .total-cost h3{
     color: #c8c8c8;
@@ -357,12 +265,134 @@ p.description{
 
 /* end of change project name ----------------------------*/
 
-/* visibility of sections */
-.section {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+
+    background: rgb(15, 16, 32);
+    background: linear-gradient(
+      180deg,
+      rgba(15, 16, 32, 1) 0%,
+      rgba(22, 24, 48, 1) 37%
+    );
+  }
+
+  .sidemenu {
+    display: flex;
+
+    background: linear-gradient(
+      157deg,
+      rgba(119, 88, 210, 1) 0%,
+      rgba(217, 176, 243, 1) 100%
+    );
+
+    width: 290px;
+    height: 650px;
+  }
+
+  .side-left {
+    position: relative;
+
+    width: 87px;
+    height: 100%;
+
+    background-color: rgba(29, 32, 62, 0.3);
+  }
+
+  .side-right {
+    background-color: rgba(44, 47, 72, 0.5);
+  }
+  .side-right a {
+    color: #fff;
+    font-family: "Lato";
+  }
+
+  .side-right nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .container-a {
+    display: flex;
+    width: 210px;
+    gap: 7px;
+
+    padding: 10px;
+    margin: -20px;
+
+    align-items: center;
+
+    border-radius: 7px;
+
+  }
+
+  .container-a i {
+    padding-left: 10px;
+  }
+
+  /* FIXME:FIXME:FIXME:FIXME: */
+  .body {
+    height: 650px;
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+
+  .container-body::-webkit-scrollbar {
     display: none;
   }
-  
-  .section.visible {
-    display: block;
+
+  /* title */
+  .title-of-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    font-family: "SF Compact Display", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+
+    color: #cdabff;
+    border-bottom: 1px solid #c8c8c8;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 20px;
   }
-  
+
+
+
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 230px;
+    height: auto;
+  }
+
+  #total-cost {
+    color: #22d7ff;
+  }
+
+
+
+.side-left img{
+  width: 90%;
+
+  position: absolute;
+  right: 0;
+}

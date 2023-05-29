@@ -50,18 +50,27 @@
     <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
   </div>
 
-  <div class="preview-container">
-    <input type="file" id="upload2" onchange="handleImageUpload(event, 'preview2', 'upload2')" accept="image/*">
-    <img id="preview2" src="" alt="Preview">
-    <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
-  </div>
-
   <!-- Add more div sections for additional image uploads if needed -->
 
   <script>
     // Automatically generate unique IDs for new sections
     var sectionCount = 2; // Update with the number of existing sections
 
+    function addImageSection() {
+      sectionCount++;
+      var previewId = "preview" + sectionCount;
+      var uploadId = "upload" + sectionCount;
+
+      var newSection = document.createElement("div");
+      newSection.className = "preview-container";
+      newSection.innerHTML = `
+        <input type="file" id="${uploadId}" onchange="handleImageUpload(event, '${previewId}', '${uploadId}')" accept="image/*">
+        <img id="${previewId}" src="" alt="Preview">
+        <button onclick="handleClearImage('${previewId}', '${uploadId}')">Clear Image</button>
+      `;
+
+      document.body.appendChild(newSection);
+    }
   </script>
 
   <!-- Example button to add a new image section -->
