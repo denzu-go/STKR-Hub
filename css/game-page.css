@@ -12,16 +12,17 @@ body{
     width: 100%;
 } 
 
-label{
+h1, h2, h3, h4, h5, h6{
     color: #fff;
+    font-family: 'SF Compact Displays', sans-serif;
 }
+
 
 /* main CSS -----------------------------------------------------------------------------*/
 main{
     display: flex;
     justify-content: center;
 
-    min-height: 100vh;
     
     background: rgb(15,16,32);
     background: linear-gradient(180deg, rgba(15,16,32,1) 0%, rgba(22,24,48,1) 37%);
@@ -40,35 +41,24 @@ main{
 
 .upper{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-  
-    height: 473px;
-    width: 1200px;
+    justify-content: space-between;
+}
+
+/* UPPER LEFT */
+.upper-left{
+    width: 742px;
+    
+}
+
+
+
+/* box */
+.game-media{
+    display: flex;
 }
 
 .box1{
-    width: 377px;
-    height: 100%;
-
-}
-
-.box2{
-    width: 270px;
-    height: 100%;
-}
-
-.box2 a{
-    color: white;
-}
-
-.box3{
-    width: 377px;
-    height: 100%;
-}
-
-.box1{
-    position: relative;
+    gap: 20px;
 
     display: flex;
     flex-direction: column;
@@ -77,27 +67,20 @@ main{
 }
 
 .big-pic{
-
-    width: 377px;
-    height: 388px;
+    width: 742px;
+    height: 417px;
 }
 
 .big-pic img{
 
-    width: 377px;
-    height: 388px;
+    width: 100%;
+    height: 100%;
     border-radius: 7px;
 }
 
 .pics{
-    position: absolute;
-    bottom: 0;
-
     display: flex; 
     justify-content: center;
-
-    width: 377px;
-    height: 68px;
 
     gap: 15px;
 
@@ -109,108 +92,60 @@ main{
 }
 
 .smallPic{
-    width: 68px;
-    height: 68px;
+    width: 90px;
+    height: 51px;
     border-radius: 7px;
 }
 /* end of main CSS --------------------------*/
 
 
-/* table -----------------------------*/
-table.GeneratedTable {
-    width: 100%;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #ffffff;
-    border-style: solid;
-    color: #ffffff;
-    opacity: .60;
 
-    font-family: 'SF Compact Display', sans-serif;
-    font-size: 14px;
-}
-  
-table.GeneratedTable td, table.GeneratedTable th {
-    border-width: 2px;
-    border-color: #ffffff;
-    border-style: solid;
-    padding: 14px;
-
-    text-align: center;
-}
-
-.quality{
-    width: 135px;
-}
-
-.price{
-    width: 135px;
-}
-/* end of table -----------------------------*/
-
-
-/* box3 -------------------------------------*/
-.component-name{
-    color: #fff;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-
-    padding-bottom: 10px;
-}
-
-.box3{
-    position: relative;
-}
-
-.steps-custom{
-    font-family: 'SF Compact Display', sans-serif;
-    width: 380px;
-    line-height: 2;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    padding: 20px;
-    background-color: #272A4E;
-    color: #fff;
-}
-
-
-
-
-
-.line-a, .line-b{
-    width: 377px;
-    height: 44px;
-    border-bottom: 2px solid #24263d;
-
-    font-family: 'SF Pro Display', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.quantity{
+/* UPPER RIGHT */
+.upper-right{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    font-family: 'SF Pro Display', sans-serif;
 
-    width: 377px;
-    height: 50px;
+    
+    width: 420px;
+    height: auto;
 
-    margin-bottom: 11px;
-
+    gap: 10px;
+    padding: 20px;
 }
 
-.add-to-cart{
-    width: 377px;
-    height: 50px;
+.game-logo{
+    background-color: #15172E;
+    width: 350px;
+    height: 150px;
 }
 
-.selections{
-    position: absolute;
-    margin-top: 50px;
+/* RIGHT MID 
+    price
+    rating
+    add to cart */
 
+.right-mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    gap: 10px;
+    width: 350px;
 }
-/* end of box3 -------------------------------------*/
+
+.game-price{
+    
+    width: 100%;
+    height: 20px;
+}
+
+.game-rating{
+    
+    width: 100%;
+    height: 20px;
+}
+
 
 /* add to cart ----------------------------*/
 .add-to-cart{
@@ -272,109 +207,123 @@ table.GeneratedTable td, table.GeneratedTable th {
 /* end of add to cart ----------------------------*/
 
 
-/* input-stepper -----------------------------------*/
 
-.quantity-text{
-    color: #fff;
-    font-size: 17px;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-
-    margin-right: 15px;
+.right-low{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-
-
-.btn-default{
-    color: #979797;
-    font-size: 14px;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-
-    width: 25px;
-    height: 25px;
-    border: 2px solid #272a4e;
-}
-
-
-.text-center{
-    color: #282828;
-    font-size: 17px;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-
-    width: 100px;
-    text-align: center;
-
-    border: 2px solid #272a4e;
-    border-radius: 7px;
-
-    height: 50px;
-}
-
-.quantity-container{
+/* INFO */
+.info{
     display: flex;
     justify-content: center;
+
+    width: 420px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    
 }
 
-/* end of input-stepper -----------------------------------*/
-.line-a{
+.a{
+    width: 100%;
+    
+    
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    color: #fff;
+    justify-content: start;
 }
 
-.line-a p{
-    opacity: .50;
-}
+.b{
+    width: 100%;
 
-.line-b{
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    color: #fff;
+    justify-content: end;
 }
-
 
 
 /* mid specs and need help -------------------------------------------------*/
 .mid{
     display: flex;
-    justify-content: center;
-    gap: 110px;
+    justify-content: space-between;
     margin-top: 70px;
 
     height: auto;
 
     color: #c2c2c2;
     font-family: 'SF Compact Display', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
 }
 
+.specs{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+
+.help{
+    
+}
+
 .spec-text{
-    width: 727px;
+    width: 800px;
     line-height: 2;
 
-    padding: 30px;
-    background-color: #272A4E;
+    
+    
 }
 
 
-.specs ul li{
-    list-style: disc ;
+ul li{
+    list-style: none;
     list-style-position: inside;
 }
 
 .help-text{
     width: 300px;
     line-height: 2;
-    padding: 30px;
-    background-color: #272A4E;
+    
 }
 /* end of mid specs and need help -------------------------------------------------*/
+
+
+/* GENRE */
+.genre{
+    border-left: #fff solid 1px;
+    padding-left: 10px;
+}
+
+.game-genre{
+    display: flex;
+    gap: 20px;
+}
+
+.longdescription{
+
+}
+
+
+
+/* RATING */
+.rating{
+    /* background-color: #233222; */
+    height: 20px;
+}
+
+.comments{
+    /* background-color: #233222; */
+    height: 200px;   
+}
+
+i{
+    font-size: 25px;
+    color: #c2c2c2;
+}
+
+.follow{
+    padding-bottom: 20px;
+}
 
 /* low --------------------------*/
 .low{
@@ -420,8 +369,4 @@ i{
 
 .follow{
     padding-bottom: 20px;
-}
-
-.help ul li{
-    list-style: none;
 }

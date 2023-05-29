@@ -12,6 +12,10 @@ body{
     width: 100%;
 } 
 
+a{
+    color: #fff;
+}
+
 /* main CSS -----------------------------------------------------------------------------*/
 main{
     display: flex;
@@ -160,12 +164,13 @@ table.GeneratedTable td, table.GeneratedTable th {
 .steps-custom{
     font-family: 'SF Compact Display', sans-serif;
     width: 380px;
+    height: auto;
     line-height: 2;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    padding: 20px;
+    padding: 40px;
     background-color: #272A4E;
     color: #fff;
+
+    margin-bottom: 100px;
 }
 
 .custom-upload{
@@ -220,6 +225,10 @@ table.GeneratedTable td, table.GeneratedTable th {
 
     margin-bottom: 11px;
 
+}
+
+label{
+    color: #fff;
 }
 
 .add-to-cart{
@@ -397,6 +406,10 @@ table.GeneratedTable td, table.GeneratedTable th {
     margin-top: 40px;
     padding: 30px;
     background-color: #272A4E;
+}
+
+.help ul li{
+    list-style: none;
 }
 /* end of mid specs and need help -------------------------------------------------*/
 

@@ -75,7 +75,7 @@ class MyFooter extends HTMLElement {
 
           <div class="f-right">
             <div class="flogo">
-              <img src="./img/stkrlabs-logo.png" alt="">
+              <img src="/img/stkrlabs-logo.png" alt="">
             </div>
           </div>
         </div>

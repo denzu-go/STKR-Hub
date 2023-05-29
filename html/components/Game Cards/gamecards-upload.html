@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="title">Custom Game Board 10"</title>
+    <title id="title">Micro Game Deck Custom Blank Cards</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../../css/customupload.css" />
+    <link rel="stylesheet" href="/css/customupload.css" />
 
     <!-- icon -->
-    <link rel="shortcut icon" type="image" href="../../img/logo.png">
+    <link rel="shortcut icon" type="image" href="/img/logo.png">
 
     <!-- fonts -->
     <link
@@ -51,8 +51,8 @@
     <style>
         .preview{
             display: block;
-            width: 600px;
-            height: 600px;
+            width: 335px;
+            height: 447px;
             border: 1px solid rgb(255, 255, 255);
             margin-top: 10px;
             text-align: center; /* Added to center the text */
@@ -61,6 +61,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
+            background-image: url(/img/Micro\ Game\ Deck\ Custom\ Blank\ Cards.png);
+            background-size: 100% 100%;
+        }
+
+        .frontback{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #15172F;
+            
         }
     </style>
   </head>
@@ -74,35 +85,56 @@
       <main>
         <div class="container-main">
           <h2 class="component-name" id="component-name">
-            Custom Game Board 10"
+            Micro Game Deck Custom Blank Cards
           </h2>
 
           <div class="container-upload">
             <div class="upper">
                 <p class="description">
-                    File types accepted: jpg, jpeg, bmp, png, gif, tif and tiffMin resolution 3000 x 3000 pixels (300DPI) | Max file size 300MB
+                    File types accepted: jpg, jpeg, bmp, png, gif, tif and tiffMin resolution 447 x 597 pixels (300DPI) | Max file size 300MB
                 </p><br>
-                <input class="imgupload" type="file" name="fileImg" id="fileImg"><br><br>
             </div>
 
             <div class="mid">
-                <h4>Dimenssions: 10" x 10" (254mm x 254mm)</h4>
-                <form method="post" action="" enctype="multipart/form-data">
-                    
-                    <div class="preview" id="previewDiv">
-                      
-                    </div>
-                    <br>
+                <h4>Dimenssions: 32mm x 45mm, 1.25" x 1.75"</h4><br>
 
-                    
-                    <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
-                    <!-- <button type="button" onclick="submitData();">Submit</button> -->
-                  </form>
+                <div class="div-card">
+                    <h3 class="frontback">Front</h3>
+                    <input class="imgupload" type="file" name="fileImg" id="fileImg">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        
+                        <div class="preview" id="previewDiv">
+                          
+                        </div>
+                        <br>
+                        
+                        <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
+                        <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                      </form>
+                </div><br><br>
+
+                <div class="div-card">
+                    <h3 class="frontback">Back</h3>
+                    <input class="imgupload" type="file" name="fileImg" id="fileImg">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        
+                        <div class="preview" id="previewDiv">
+                          
+                        </div>
+                        <br>
+    
+                        
+                        <button class="btn" type="button" onclick="clearImage();">Clear Picture</button> <!-- Added clear button -->
+                        <!-- <button type="button" onclick="submitData();">Submit</button> -->
+                      </form>
+                </div><br><br>
+
+
             </div>
 
             <div class="lower">
                 <h4>Please review your design carefully before finalizing your order as it will be printed without any additional editing by our team.</h4>
-                <input type="checkbox" id="copyright" name="vehicle1" value="">
+                <input type="checkbox" id="copyright" name="vehicle1" value="Bike">
                 <label for="vehicle1">Yes, I confirm that all the images, names and other content added onto my design are correct and I that I own all copyrights for them or have full authorization to use them.</label><br>
             </div>
 
@@ -121,17 +153,13 @@
       </main>
 
 
-      <my-footer-for-components></my-footer-for-components>
+      <my-footer></my-footer>
 
     </div>
 
-    <script src="./js/main.js"></script>  
-    <script src="./js/login.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/header-for-components.js"></script>
-    <script src="../../js/subnav.js"></script>
-    <script src="../../js/footer-for-components.js"></script> 
+    <script src="/js/header.js"></script>
+    <script src="/js/subnav.js"></script>
+    <script src="/js/footer.js"></script> 
 
     <script>
         // Preview
