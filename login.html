@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,30 +21,43 @@
     </head>
     <body>
         <div class="container" id="container">
-
+            <!-- Sign Up -->
             <div class="form-container register-container">
-                <form action="#">
-                    <h1>Register here.</h1>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                    <button>Register</button>
-                    <span>or use your account</span>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="lni
-                                lni-facebook-fill"></i></a>
-                        <a href="#" class="social"><i class="lni lni-google"></i></a>
-                        
-                    </div>
+                <form action="process_signup.php" method="post" novalidate>
+                    <h1>Sign Up here</h1>
+
+                    <input type="text" name="first_name" placeholder="First Name">
+
+                    <input type="text" name="last_name" placeholder="Last Name">
+
+                    <input type="email" name="email" placeholder="Email">
+
+                    <input type="text" name="username" placeholder="Username">
+
+                    <input type="password" name="password" placeholder="Password">
+
+                    <input type="password" name="confirm_password" placeholder="Confirm Password">
+
+                    <button type="submit" value="signup">Signup</button>
+
+                    <!-- <a href="login.php"> click to login </a> -->
                 </form>
             </div>
 
+            <!-- Login -->
             <div class="form-container login-container">
-                <form action="#">
-                    <h1>Login here.</h1>
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                    <div class="content">
+                <form method="post">
+                    <h1>Login here</h1>
+
+                    <?php if ($is_invalid): ?>
+                    <em?> Username or Password does not exist </em>
+                        <?php endif; ?>
+
+                    <input type="text" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>"  placeholder="Username">
+
+                    <input type="password" name="password" placeholder="Password">
+
+                    <!-- <div class="content">
                         <div class="checkbox">
                             <input type="checkbox" name="checkbox"
                                 id="checkbox">
@@ -52,18 +66,15 @@
                         <div class="pass-link">
                             <a href="#">Forgot password?</a>
                         </div>
-                    </div>
-                    <button>Login</button>
-                    <span>or use your account</span>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="lni
-                                lni-facebook-fill"></i></a>
-                        <a href="#" class="social"><i class="lni lni-google"></i></a>
-                        
-                    </div>
+                    </div> -->
+                    <button type="submit" value="login">Login</button>
+
+                    <!-- <a href="signup.php"> signup </a>   -->
                 </form>
             </div>
 
+
+            <!-- Overlay (ghost) -->
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
@@ -85,13 +96,8 @@
             </div>
 
         </div>
-
-        <script src="./js/main.js"></script>  
-        <script src="./js/login.js"></script>
-        <script src="../../js/main.js"></script>
-        <script src="../../js/header.js"></script>
-        <script src="../../js/subnav.js"></script>
-        <script src="../../js/footer.js"></script> 
+ 
+        <script src="/js/login.js"></script>
 
     </body>
 </html>

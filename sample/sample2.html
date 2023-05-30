@@ -1,80 +1,99 @@
+<?php 
+
+$is_invalid = false;
+
+ if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+    $mysqli = require __DIR__ . "/database.php";
+
+    $sql = sprintf("SELECT * FROM user
+            WHERE username = '%s'",
+            $mysqli->real_escape_string($_POST["username"]));
+    
+    $result = $mysqli->query($sql);
+
+    $user = $result->fetch_assoc();
+
+    if($user){
+        if(password_verify($_POST["password"],$user["password"])){
+            
+            session_start();
+
+            session_regenerate_id();
+
+            $_SESSION["user_id"] = $user["user_id"];
+
+            header("Location: index.php");
+            exit;
+        }
+    }
+
+    $is_invalid = true;
+ }
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Multiple Image Upload and Preview</title>
-  <style>
-    .preview-container {
-      margin-bottom: 20px;
-    }
-
-    .preview-container img {
-      max-width: 300px;
-      max-height: 300px;
-      margin-bottom: 10px;
-    }
-  </style>
-  <script>
-    function handleImageUpload(event, previewId, uploadId) {
-      var preview = document.getElementById(previewId);
-      var file = event.target.files[0];
-      var reader = new FileReader();
-
-      reader.onloadend = function() {
-        preview.src = reader.result;
-      }
-
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        preview.src = "";
-      }
-    }
-
-    function handleClearImage(previewId, uploadId) {
-      var preview = document.getElementById(previewId);
-      preview.src = "";
-      document.getElementById(uploadId).value = null;
-    }
-  </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
+
 <body>
-  <div class="preview-container">
-    <input type="file" id="upload1" onchange="handleImageUpload(event, 'preview1', 'upload1')" accept="image/*">
-    <img id="preview1" src="" alt="Preview">
-    <button onclick="handleClearImage('preview1', 'upload1')">Clear Image</button>
-  </div>
 
-  <div class="preview-container">
-    <input type="file" id="upload2" onchange="handleImageUpload(event, 'preview2', 'upload2')" accept="image/*">
-    <img id="preview2" src="" alt="Preview">
-    <button onclick="handleClearImage('preview2', 'upload2')">Clear Image</button>
-  </div>
+    <!-- Sign up -->
+    <form action="process_signup.php" method="post" novalidate>
+        <h1>Signup</h1>
 
-  <!-- Add more div sections for additional image uploads if needed -->
+        <label for="first_name"> First Name </label>
+        <input type="text" name="first_name"> <br>
 
-  <script>
-    // Automatically generate unique IDs for new sections
-    var sectionCount = 2; // Update with the number of existing sections
+        <label for="last_name"> Last Name </label>
+        <input type="text" name="last_name"> <br>
 
-    function addImageSection() {
-      sectionCount++;
-      var previewId = "preview" + sectionCount;
-      var uploadId = "upload" + sectionCount;
+        <label for="email"> Email </label>
+        <input type="email" name="email"> <br>
 
-      var newSection = document.createElement("div");
-      newSection.className = "preview-container";
-      newSection.innerHTML = `
-        <input type="file" id="${uploadId}" onchange="handleImageUpload(event, '${previewId}', '${uploadId}')" accept="image/*">
-        <img id="${previewId}" src="" alt="Preview">
-        <button onclick="handleClearImage('${previewId}', '${uploadId}')">Clear Image</button>
-      `;
+        <label for="username"> Username </label>
+        <input type="text" name="username"> <br>
 
-      document.body.appendChild(newSection);
-    }
-  </script>
+        <label for="password"> Password </label>
+        <input type="password" name="password"> <br>
 
-  <!-- Example button to add a new image section -->
-  <button onclick="addImageSection()">Add Image Section</button>
+        <label for="confirm_password"> Confirm Password </label>
+        <input type="password" name="confirm_password"> <br>
 
+        <input type="submit" value="signup"> <br>
+
+        <a href="login.php"> click to login </a>
+    </form>
+
+
+    <form method="post">
+        <h1>Login</h1>
+
+        <?php if ($is_invalid): ?>
+        <em?> Username or Password does not exist </em>
+            <?php endif; ?>
+
+            <label for="username"> Username </label>
+            <input type="text" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>"> <br>
+
+            <label for="password"> Password </label>
+            <input type="password" name="password"> <br>
+
+            <input type="submit" value="login"> <br>
+
+            <a href="signup.php"> signup </a>    
+    </form>
+    
+
+
+    <!--Login/signup js script -->
+    <script src="/js/login.js"></script>
 </body>
+
 </html>
