@@ -1,0 +1,101 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/subnav.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-top: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #fff;
+    font-family: 'SF Compact Display', sans-serif;
+}
+
+label {
+  color: #fff;
+}
+
+/* main CSS -----------------------------------------------------------------------------*/
+main {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  background-color: #15172E;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+
+  height: auto;
+  width: 1200px;
+
+  margin: 40px auto;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.item{
+    width: 270px;
+    height: 225px;
+}
+
+.item-box{
+    
+}
+
+.pic{
+    width: 100%;
+    height: 152px;
+}
+
+.pic img{
+    width: 100%;
+    height: 152px;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.text{
+    padding: 10px;
+    width: 100%;
+    height: calc(225px - 152px);
+    /* background: rgb(36,34,80);
+    background: linear-gradient(180deg, rgba(36,34,80,1) 0%, rgba(22,24,48,1) 100%); */
+
+    background-image: url("/img/market-games-opacity.png");
+    border-radius: 0px 0px 7px 7px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+h5{
+    opacity: .4;
+}

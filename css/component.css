@@ -34,17 +34,21 @@ main{
   display: flex;
   background: rgb(65, 70, 119);
   justify-content: center;
+
 }
 
-
+.sub-content{
+  text-align: center;
+}
 
 .sub-content img{
   height: 200px;
   width: 200px;
   background-color: rgb(65, 70, 119);
   padding: 20px 20px;
-  
+  border-radius: 30px;
 }
+
 
 .sub-content p{
   font-weight: 700;
@@ -84,7 +88,6 @@ main{
 .section-main{
 
   margin-top: 35px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

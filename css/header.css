@@ -1,3 +1,7 @@
+*{
+    /* font-family: 'Akira Expanded', sans-serif; */
+}
+
 header{
     height: 50px;
     background: #272A4E;
@@ -53,7 +57,12 @@ ul li a:hover {
     position: relative;
     font-size:8px;
     color: #fff;
-    font-family: 'Akira Expanded', sans-serif;
+}
+
+span{
+    font-size:14px;
+    color: #fff;
+    
 }
   
 .logo img{
@@ -65,6 +74,7 @@ ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Akira Expanded', sans-serif;
 }
   
 .logo a{

@@ -1,0 +1,103 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/subnav.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+a{
+    text-decoration: none;
+}
+
+label {
+  color: #fff;
+}
+
+/* main CSS -----------------------------------------------------------------------------*/
+main {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  background: rgb(65,70,119);
+  background: linear-gradient(180deg, rgba(65,70,119,1) 0%, rgba(29,32,62,1) 100%);
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+
+  height: auto;
+  width: 1200px;
+
+  margin: 40px auto;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+p {
+  color: #fff;
+  font-family: "Lato";
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+
+.content{
+    display: flex;
+    gap: 40px;
+}
+
+.section-box1{
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 250px;
+
+    gap: 10px;
+}
+
+.section-box-pic{
+    width: 270px;
+    height: 250px;
+}
+
+.section-box-pic img{
+    width: 270px;
+    height: 250px;
+    border-radius: 7px;
+
+    box-shadow: 1px 14px 50px -1px rgba(0, 0, 0, 0.77);
+}
+
+.section-box-text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
