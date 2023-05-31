@@ -1,135 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="components-table">
+    <table>
+        <tr>
+            <td>Select</td>
+            <td>Product</td>
+            <td>Description</td>
+            <td>Quantity</td>
+            <td>Price</td>
 
-    <title>Sample 2</title>
+        </tr>
 
-    <style>
-        @import url(../css/header.css);
-        @import url(../css/footer.css);
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .section {
-            display: none; /* Initially hide all sections */
-        }
-        .active {
-            display: block; /* Show the active section */
-        }
-    </style>
-
-    <script src="./js/main.js"></script>  
-    <script src="./js/login.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/header-for-components.js"></script>
-    <script src="../js/subnav.js"></script>
-    <script src="../js/footer.js"></script>
-    <script src="../js/footer-for-components.js"></script> 
-    <script src="../js/section visibility.js"></script> 
-    <script src="../js/activenav.js"></script>
-    <script>
-        function switchSection(sectionId) {
-            var sections = document.getElementsByClassName("section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("active"); // Hide all sections
-            }
-
-            var section = document.getElementById(sectionId);
-            if (section) {
-                section.classList.add("active"); // Show the selected section
-                history.replaceState(null, null, '#' + sectionId); // Update the URL fragment
-            }
-        }
-
-        window.onload = function() {
-            var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-            if (sectionId) {
-                switchSection(sectionId); // Activate the section based on the URL fragment
-            } else {
-                switchSection('home'); // Default to the home section if no fragment is present
-            }
-        }
-    </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var sectionId = location.hash.slice(1); // Get the section ID from the URL fragment
-        if (sectionId) {
-            switchSection(sectionId); // Activate the section based on the URL fragment
-        } else {
-            switchSection('allcomponents'); // Default to the 'allcomponents' section if no fragment is present
-        }
-    });
-</script>
-
-</head>
-<body>
-    <div class="container">
-
-        <!-- HEADER -->
-        <my-header-for-components></my-header-for-components>
-
-        <!-- MAIN -->
-        <main>
-            <div class="sidemenu">
-                <div class="side-left">
-
-                </div>
-                <!-- FIXME:FIXME:FIXME:FIXME:FIXME:FIXME: -->
-                <div class="side-right">
-                    <div class="ul-container">
-                        <ul>
-                            <nav>
-                                <a href="#allcomponents" onclick="switchSection('allcomponents')">All Components</a>
-
-                                <a href="#addrulebook" onclick="switchSection('addrulebook')">Add Rulebook</a>
-
-                                <a href="#addbox" onclick="switchSection('addbox')">Add box</a>
-
-                                <a href="#name" onclick="switchSection('name')">Name</a>
-                            </nav>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- TODO:TODO:TODO:TODO:TODO:TODO:TODO: -->
-            <div class="body">
-                <!-- sections -->
-                <section id="allcomponents" class="section active">
-                    <h1>allcomponents</h1>
-                    <p>This is the allcomponents section.</p>
-                </section>
-            
-                <section id="addrulebook" class="section">
-                    <h1>addrulebook</h1>
-                    <p>This is the addrulebook section.</p>
-                </section>
+        <?php foreach ($cartItems as $row) { ?>
+            <tr>
+                <td>
+                    <input type="checkbox" name="selectedIds[]" value="<?= $row['cart_id'] ?>" />
+                </td>
                 
-                <section id="addbox" class="section">
-                    <h1>addbox</h1>
-                    <p>This is the addbox section.</p>
-                </section> 
+                <td><?= $row['product_name'] ?></td>
+                <!-- <td><?= $row['product_description'] ?></td> -->
 
-                <section id="name" class="section">
-                    <h1>name</h1>
-                    <p>This is the name section.</p>
-                </section> 
-            </div>
-        
-        </main>
+                <td>
+                    <input id="cart-quantity-<?= $row['cart_id'] ?>" type="number" class="form-control text-center cart-quantity" value="<?= $row['cart_quantity'] ?>" min="1" max="99" onchange="updateCartPrice(<?= $row['cart_id'] ?>, <?= $row['product_price'] ?>)" />
+                </td>
 
-        <!-- FOOTER -->
-        <my-footer></my-footer>
+                <td id="cart-price-<?= $row['cart_id'] ?>"><?= $row['cart_price'] ?></td>
 
-        
-    </div>
-</body>
-</html>
+            </tr>
+        <?php } ?>
+
+    </table>
+</div>

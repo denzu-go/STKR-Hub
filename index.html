@@ -124,3 +124,18 @@
     <script src="/js/footer.js"></script>
   </body>
 </html>
+
+
+
+___________________________________________
+<h1> Home</h1>
+<?php if (isset($user)) : ?>
+
+    <p> Hello <?= htmlspecialchars($user["first_name"]) ?> </p>
+    
+    <p><a href="shop.php"> shop </a></p>
+    <p><a href="creation.php"> creation </a></p>
+    <p><a href="cart.php"> cart </a></p>
+    <p><a href="logout.php"> Log out</a></p>
+
+<?php endif; ?>

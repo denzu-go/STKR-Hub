@@ -1,99 +1,94 @@
-<?php 
+<form method="POST" action="cart_preview.php">
+                    
+    <div class="table-header">
+        <div class="table-delete">
+            Select
+        </div>
 
-$is_invalid = false;
+        <div class="table-components">
+            Product
+        </div>
 
- if($_SERVER["REQUEST_METHOD"] === "POST"){
+        <!--                                     
+                    <td>Description</td> -->
 
-    $mysqli = require __DIR__ . "/database.php";
+        <div class="table-quantity">
+            Quantity
+        </div>
 
-    $sql = sprintf("SELECT * FROM user
-            WHERE username = '%s'",
-            $mysqli->real_escape_string($_POST["username"]));
-    
-    $result = $mysqli->query($sql);
+        <div class="table-cost">
+            Price
+        </div>
+    </div>
 
-    $user = $result->fetch_assoc();
+    <?php foreach ($selectedIds as $id) 
+    {
+        $mysqli = require __DIR__ . "/database.php";
+        $sql = "SELECT * FROM cart JOIN products ON cart.product_id = products.product_id WHERE cart_id = $id AND user_id = {$user['user_id']}";
+        $result = $mysqli->query($sql);
 
-    if($user){
-        if(password_verify($_POST["password"],$user["password"])){
-            
-            session_start();
+        if ($result) {
+            $cartItem = $result->fetch_assoc();
+    ?>
+            <h1>purchase description</h1>
+            <div class="table-content">
+                <!-- product name -->
+                <div class="content-components">
+                    <?= htmlspecialchars($cartItem["product_name"]) ?>
+                </div>
 
-            session_regenerate_id();
+                <!-- quantity -->
+                <div class="content-quantity">
+                    quantity: <?= htmlspecialchars($cartItem["cart_quantity"]) ?>
+                </div>
 
-            $_SESSION["user_id"] = $user["user_id"];
+                <!-- price -->
+                <div class="content-cost">
+                    Price: <?= htmlspecialchars($cartItem["cart_price"]) ?>
+                </div>
+                
 
-            header("Location: index.php");
-            exit;
+            </div>
+    <?php
         }
     }
-
-    $is_invalid = true;
- }
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-
-<body>
-
-    <!-- Sign up -->
-    <form action="process_signup.php" method="post" novalidate>
-        <h1>Signup</h1>
-
-        <label for="first_name"> First Name </label>
-        <input type="text" name="first_name"> <br>
-
-        <label for="last_name"> Last Name </label>
-        <input type="text" name="last_name"> <br>
-
-        <label for="email"> Email </label>
-        <input type="email" name="email"> <br>
-
-        <label for="username"> Username </label>
-        <input type="text" name="username"> <br>
-
-        <label for="password"> Password </label>
-        <input type="password" name="password"> <br>
-
-        <label for="confirm_password"> Confirm Password </label>
-        <input type="password" name="confirm_password"> <br>
-
-        <input type="submit" value="signup"> <br>
-
-        <a href="login.php"> click to login </a>
-    </form>
-
-
-    <form method="post">
-        <h1>Login</h1>
-
-        <?php if ($is_invalid): ?>
-        <em?> Username or Password does not exist </em>
-            <?php endif; ?>
-
-            <label for="username"> Username </label>
-            <input type="text" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>"> <br>
-
-            <label for="password"> Password </label>
-            <input type="password" name="password"> <br>
-
-            <input type="submit" value="login"> <br>
-
-            <a href="signup.php"> signup </a>    
-    </form>
+    ?>
     
 
 
-    <!--Login/signup js script -->
-    <script src="/js/login.js"></script>
-</body>
 
-</html>
+    <!-- TABLE CONTENT -->
+    <div class="table-content">
+        <!-- delete -->
+        <div class="content-delete">
+            <input type="checkbox" name="selectedIds[]" value="<?= $row['cart_id'] ?>" />
+        </div>
+
+        <!-- product name -->
+        <div class="content-components">
+            <div class="file-name" id="order">
+                <?= $row['product_name'] ?>
+            </div>
+        </div>
+
+
+        <!-- quantity -->
+        <div class="content-quantity">
+            <input id="cart-quantity-<?= $row['cart_id'] ?>" type="number" class="form-control text-center cart-quantity" value="<?= $row['cart_quantity'] ?>" min="1" max="99" onchange="updateCartPrice(<?= $row['cart_id'] ?>, <?= $row['product_price'] ?>)" />
+        </div>
+
+
+        <!-- price -->
+        <div class="content-cost">
+            <div id="cart-price-<?= $row['cart_id'] ?>"><?= $row['cart_price'] ?></div>
+        </div>
+
+    </div>
+
+    <?php } ?>
+</div>
+
+
+<button class="add-to-cart" type="submit">Checkout</button>
+
+</form>
